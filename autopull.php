@@ -35,7 +35,7 @@ if (isset($_GET['update'])) {
 	if ($pass === $check) {
 
 		// what does the pull
-		$output = shell_exec('git pull');
+		$output = shell_exec('git pull origin master');
 
 		if ( $output && $email ) {
 			// Email to say it's successful
