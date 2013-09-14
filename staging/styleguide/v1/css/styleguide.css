@@ -1,0 +1,26 @@
+/* Tab Content
+-------------*/
+
+.tabs-left>.nav-tabs {margin-right:40px;}
+
+
+.style-list {border:solid #dfdfdf;border-width: 0px 1px 1px 1px;}
+.style-list li {list-style: none;border-top: 1px solid #dfdfdf;padding:20px;position: relative;}
+.style-list li span {font-size: 0.9em;background: #f6f6f6;border: solid #dfdfdf;border-width: 0 0 1px 1px;padding:5px 10px;position: absolute;top:0;right:0; color:#a0a0a0;}
+.style-list li:hover, .style-list li:hover+li {border-color: #bbb}
+.style-list li:hover span {color:#000;}
+.code {background: #f2fcff}
+.code code {background: transparent;padding:0;border:0;}
+.style-list li.code:hover {border-color: #dfdfdf}
+
+.style-container {margin-left: 25px}
+
+.the-icons {list-style:none;}
+.the-icons li {float:left; width:25%; line-height:25px;}
+
+.bs-docs-separator {margin:40px 0 39px;}
+
+.clearFix {clear:all;}
+pre {margin-top: 25px; padding-top:30px;}
+
+footer {padding:20px 0;border-top: 1px solid #ccc;margin-top: 50px}

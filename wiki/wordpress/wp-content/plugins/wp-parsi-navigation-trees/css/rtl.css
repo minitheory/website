@@ -1,0 +1,13 @@
+#wb_tree span{
+   margin-left: 3px;
+}
+#wb_tree ul li{
+   margin-right: 10px;
+}
+#wb_tree ul ul{
+   margin-right: 10px;
+}
+#wb_tree ul ul li{
+   background-position: right;
+   padding-right: 5px;
+}

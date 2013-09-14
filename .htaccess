@@ -1,0 +1,34 @@
+#
+# Uncomment the statement below if you want to make use of
+# HTTP authentication and it does not already work.
+# This could be required if you are for example using PHP via Apache CGI.
+#
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+# Unless directory, remove trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(([A-Za-z0-9\-]+/)*[A-Za-z0-9\-]+)?$ $1.php
+
+
+# Redirect external .php requests to extensionless url
+#RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
+#RewriteRule ^(.+)\.php$ http://minitheory.com/$1 [R=301,L]
+
+#RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+</IfModule>
+
+<Files "config.php">
+Order Allow,Deny
+Deny from All
+</Files>
+
+<Files "common.php">
+Order Allow,Deny
+Deny from All
+</Files>
+
+
+# Use PHP 5.3
+AddType application/x-httpd-php53 .php

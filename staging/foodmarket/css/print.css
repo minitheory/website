@@ -1,0 +1,56 @@
+
+#dashboard, #main-nav *, #search-form, #account-tabs *, ul.nav, #delivery-bill .back,
+.span16 hr
+{
+	display: none;
+}
+
+/* To ensure that only phone number shows */
+ul#sub-nav {
+	visibility: hidden;
+}
+
+li.phone {
+	visibility: visible;
+}
+
+/* Make sure the hrefs don't get printed */
+a[href]:after {
+    content: none !important;
+}
+
+/* header */
+.navbar-inner,  {
+	max-width: 100%;
+	margin: 0 auto;
+	clear: both;
+}
+
+/* Div that controls the delivery bill */
+.span16 {
+	margin: 0;
+	max-width: 100%;
+}
+
+.tab-content, .tabbable {
+	max-width: 98%;
+	margin: 0;
+	padding: 0;
+}
+
+/* Ensure that in delivery bill, pickup & delivery is on same line as shipping number etc */
+#delivery-bill .row .span6 {
+	position: relative;
+	width: 40%;
+}
+
+/* Switch off border */
+#delivery-bill, .navbar-inner {
+	border: none;
+	border-bottom: 1px solid black;
+}
+
+/* For FF, footer appears in the wrong place in FF print */
+footer {
+	position: relative;
+}

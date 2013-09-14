@@ -1,0 +1,99 @@
+
+body{background: url('../img/background.png'); font-family: 'Open Sans', sans-serif;}
+a.brand {width:122px;height:73px;background: url('../img/logo.png') no-repeat;float:left;text-indent: -9999px;margin:4px 0 2px;}
+a.view-gallery,a.play-video {width:33px;height:19px;background: url('../img/icons.gif') 0 -30px no-repeat;text-indent: -9999px;display: inline-block;*display:inline-block;zoom:1;margin-left:10px;}
+a.play-video {width:35px;height:20px;background-position: 0 -106px}
+a.view-gallery:hover {background-position: 0 -49px}
+a.view-gallery.active {background-position:0 -68px }
+a.view-gallery.active:hover {background-position:0 -87px }
+a.play-video:hover {background-position: 0 -126px}
+a.play-video.active {background-position: 0 -146px}
+a.play-video.active:hover {background-position: 0 -166px}
+#header {background: url('../img/bg-header.png');}
+.main-nav {margin-bottom:20px}
+.navbar {background:#00baff;margin-bottom:1px;}
+.navbar-inner {padding:0}
+.nav {border-right:1px solid #fff;}
+.nav li, .navbar .title {border-left:1px solid #fff;}
+.nav li a, .navbar .title {text-transform: uppercase;font-weight:600;font-size:12px;color:#fff;line-height:1.3em;height:40px;text-align: center;width:116px;display: table-cell;vertical-align: middle}
+.nav li a span {display:block;}
+.nav.social {margin:0 3px 0 0;}
+.nav.social li a{text-indent: -9999px;width:38px;height:40px;padding:0;background: url('../img/twitter.png')no-repeat 50% 50%;}
+.nav.social li.facebook a {background-image: url('../img/fb.png')}
+.nav.social li.rss a {background-image: url('../img/rss.png')}
+.navbar.subnav {background: #e9e9e9}
+.navbar.subnav .navbar-inner {min-height:30px;}
+.navbar.alt {width:auto;float:none;margin-bottom: 0}
+.navbar.alt .btn-navbar {background: #00baff;border-radius:5px;padding:10px;margin-top: 10px}
+
+
+.navbar.subnav .nav {margin:0;}
+.navbar .title {float:left;background:#ffba00;height:30px;line-height:30px;}
+.navbar.subnav .nav >li > a {height:30px;line-height: 1.1em;padding:0 15px;color:#666;display:table-cell;vertical-align: middle;max-width:86px;}
+.navbar.subnav .nav >li > a:focus,.navbar.subnav .nav >li > a:hover {background: #ffba00;color:#fff}
+
+.header {margin-bottom: 10px}
+.header .meta {color:#666;font-weight:600;font-size: 16px;line-height: 30px;background:#e9e9e9;height:30px;padding:0 10px 0 15px;margin-right:10px;}
+.header form#date-form {margin:0;display: inline-block}
+.header form#date-form input {width:14em;font-size:16px;font-family: 'Open Sans', sans-serif;font-weight: 600;margin:0; padding:2px;vertical-align: initial}
+.header form#date-form a {font-size:12px;line-height: 30px}
+.header .meta a.calendar {width:20px;height:30px;background: url('../img/icons.gif') 0 0 no-repeat;text-indent:-9999px;display: inline-block;*display:inline;zoom:1;}
+.header em {color:#999;font-size:11px;font-weight: normal;line-height: 30px}
+h2 {text-transform: uppercase;font-size: 16px; color:#fff;width:117px;text-align: center;line-height:30px;margin:0;font-weight:600;}
+.main h2 {;background:#ff54c9;margin-right:1px;}
+.aside h2 {background:#00baff;}
+
+.post {color:#6b5e53;border-bottom: 1px solid #e9e9e9;padding-bottom: 20px;margin-bottom:20px;background: none;overflow:hidden;}
+.post .meta {text-transform: uppercase;font-size:12px;font-weight: bold;font-weight: 600}
+.post .meta a, .post .meta span {padding:2px 10px 1px;}
+.post .meta .source {background: #e9e9e9;margin-right:1px;}
+.post .meta .source:hover {color:#00baff;background:#666;text-decoration: none}
+.post .meta .author {background: #999; color: #e9e9e9;}
+.post .meta .timestamp{font-size:10px;display: inline-block;*display:inline;zoom:1;}
+.post .meta .new {color:#fff;background: #ff54c9}
+.post .meta .share {display: none}
+.post .meta .twitter-share-button {float:left;margin-right: 5px}
+.post .meta .fb-like-wrapper{width:49px;overflow: hidden;float:right;}
+.post .meta .fb-like span {padding:0;}
+.post h3 {line-height: 1em}
+.post h3 a{color:#ff54c9;text-transform: uppercase;font-weight:600;}
+.post .content img {margin-right:20px;}
+.post .content .img-holder{overflow:hidden;float:left;max-height:200px}
+.post .more {font-weight:600;text-transform:uppercase;font-size:12px;overflow: hidden}
+.post .more span {background: #e9e9e9;padding:0 5px;float:left;margin-right:1px;}
+.post .more ul {overflow: hidden}
+.post .more ul li{list-style: none;float:left;padding:0 5px;background: #e9e9e9;margin:0 1px 1px 0;}
+.post .more ul li a {color:#6b5e53;}
+.post .more ul li strong a {color:#00baff;}
+.post .gallery {display: inline-block;}
+.post .gallery ul{padding:15px 0 15px 15px;margin:0;background: #e9e9e9;overflow: hidden;}
+.post .gallery li {float:left;margin-right: 15px; list-style: none}
+.post .gallery li img {margin:0;}
+.post .gallery .hide-gallery {font-size:10px;line-height:10px;background: #e9e9e9;text-transform: uppercase;font-weight: 600;color:#999;padding:0px 10px 4px;float:right;}
+.post .video {display:none;}
+.modal {line-height:0;overflow: hidden}
+.aside .post h3 {font-size: 16px}
+.aside .post .header {margin:0;}
+.aside .post {padding-bottom:5px;}
+.aside .post .meta{overflow: hidden}
+.aside .post .source {float:left;}
+.aside .post .author {float:left;clear:left;}
+.aside .post h3 {clear:left;}
+
+.back-holder {overflow:hidden;position: fixed;bottom:60px;}
+.back {font-size: 12px;line-height:14px;background: url('../img/arrow-back.gif') 50% 4px no-repeat #999;text-transform: uppercase;color:#fff;width:44px;padding:13px 3px 4px;text-align: center;font-weight: 600;display: none}
+.back:hover {color:#fff;}
+
+footer {background: #00baff}
+footer ul {margin:0;border-right:1px solid #fff;float:left;}
+footer ul li {list-style: none;border-left:1px solid #fff;float:left;}
+footer ul li a {width:116px;text-align: center;text-transform: uppercase;font-size:12px;display: block;color:#fff;font-weight: 600}
+
+#ui-datepicker-div {font-size:11px;line-height:11px;}
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; line-height:11px}
+.ui-timepicker-div dl dd { margin: 0 10px 10px 4.5em;line-height:11px }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }

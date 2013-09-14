@@ -1,0 +1,571 @@
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+/* line 6, ../sass/ie.scss */
+#top-nav .navbar-inner .container {
+  background-color: #262d3f;
+}
+
+/* line 7, ../sass/ie.scss */
+.navbar-inner, .dropdown-menu a:hover {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
+}
+
+/* line 9, ../sass/ie.scss */
+#sub-nav .phone {
+  width: 125px;
+}
+/* line 10, ../sass/ie.scss */
+#sub-nav .dropdown .caret {
+  margin-top: 0;
+  vertical-align: middle;
+}
+
+/* line 13, ../sass/ie.scss */
+.featured-list li a .title {
+  background-color: black;
+}
+
+/* line 15, ../sass/ie.scss */
+.table-col {
+  margin-left: 0 !important;
+}
+
+/* line 17, ../sass/ie.scss */
+.close, .close:hover {
+  filter: alpha(enabled=false);
+}
+
+/* line 19, ../sass/ie.scss */
+.carousel .carousel-indicators li, footer .nav li {
+  *display: inline;
+  zoom: 1;
+  vertical-align: top;
+}
+
+/* line 25, ../sass/ie.scss */
+.lt-ie8 #top-nav {
+  position: relative;
+  z-index: 1000;
+}
+/* line 26, ../sass/ie.scss */
+.lt-ie8 #top-nav .popular {
+  margin-top: 5px;
+}
+/* line 28, ../sass/ie.scss */
+.lt-ie8 #main-nav li {
+  width: 19.96%;
+}
+/* line 30, ../sass/ie.scss */
+.lt-ie8 .notification {
+  overflow: hidden;
+}
+/* line 32, ../sass/ie.scss */
+.lt-ie8 .notification span {
+  float: left;
+}
+/* line 35, ../sass/ie.scss */
+.lt-ie8 .featured-list li {
+  width: 33.3%;
+}
+/* line 36, ../sass/ie.scss */
+.lt-ie8 .featured-list li.big-item {
+  width: 66.66%;
+}
+/* line 37, ../sass/ie.scss */
+.lt-ie8 .featured-list li a {
+  overflow: hidden;
+}
+/* line 39, ../sass/ie.scss */
+.lt-ie8 .featured-list li a .title {
+  bottom: -1px;
+}
+/* line 42, ../sass/ie.scss */
+.lt-ie8 .carousel .carousel-indicators {
+  width: 100px;
+  left: 50%;
+  margin-left: -50px;
+  text-align: right;
+}
+/* line 45, ../sass/ie.scss */
+.lt-ie8 #item-panel .bidding-panel .bid-summary {
+  margin: -10px 0 0;
+  padding-top: 0;
+}
+/* line 46, ../sass/ie.scss */
+.lt-ie8 #item-panel .bidding-panel form {
+  margin-top: -10px;
+}
+/* line 48, ../sass/ie.scss */
+.lt-ie8 #item-panel .bidding-panel form dl.time {
+  float: left;
+}
+/* line 50, ../sass/ie.scss */
+.lt-ie8 #item-panel .bidding-panel dd {
+  float: none;
+}
+/* line 52, ../sass/ie.scss */
+.lt-ie8 #item-panel .bidding-panel .control-group.first {
+  position: relative;
+  z-index: 2;
+}
+/* line 56, ../sass/ie.scss */
+.lt-ie8 #dashboard h3 {
+  line-height: 1em;
+  margin-top: 0 !important;
+}
+/* line 57, ../sass/ie.scss */
+.lt-ie8 #dashboard .next {
+  width: 24%;
+}
+/* line 59, ../sass/ie.scss */
+.lt-ie8 #dashboard .next dl {
+  margin-top: 10px;
+}
+/* line 60, ../sass/ie.scss */
+.lt-ie8 #dashboard .next dt {
+  clear: both;
+  position: static;
+  float: left;
+  margin: 0 10px 0 0px;
+}
+/* line 61, ../sass/ie.scss */
+.lt-ie8 #dashboard .next dd {
+  margin: 0 0 0 10px;
+  overflow: hidden;
+}
+/* line 64, ../sass/ie.scss */
+.lt-ie8 #dashboard .summary strong {
+  line-height: 1em;
+}
+/* line 65, ../sass/ie.scss */
+.lt-ie8 #dashboard .view-all {
+  margin-top: 0 !important;
+  line-height: 1em;
+}
+/* line 68, ../sass/ie.scss */
+.lt-ie8 .account-page .tabbable {
+  margin-top: 20px;
+}
+/* line 69, ../sass/ie.scss */
+.lt-ie8 footer {
+  height: 61px;
+  bottom: -13px;
+}
+/* line 70, ../sass/ie.scss */
+.lt-ie8 #table-completed .item-name {
+  position: static;
+}
+/* line 71, ../sass/ie.scss */
+.lt-ie8 #table-completed .item-name input {
+  position: absolute;
+  margin-left: -22px;
+  margin-top: -2px;
+  left: auto;
+}
+/* line 72, ../sass/ie.scss */
+.lt-ie8 .login-option a {
+  margin-top: 10px;
+}
+/* line 73, ../sass/ie.scss */
+.lt-ie8 .signup-panel .controls {
+  margin-left: 0;
+}
+/* line 74, ../sass/ie.scss */
+.lt-ie8 .datepicker {
+  width: 225px;
+}
+
+/* line 77, ../sass/ie.scss */
+.lt-ie7 {
+  /* Right Side Panels */
+  /* Footer */
+}
+/* line 78, ../sass/ie.scss */
+.lt-ie7 body {
+  font-size: 10px;
+  background-color: #eef3f9;
+}
+/* line 79, ../sass/ie.scss */
+.lt-ie7 .home-page .panel li a {
+  display: inline;
+  zoom: 1;
+}
+/* line 81, ../sass/ie.scss */
+.lt-ie7 .btn {
+  width: auto;
+  overflow: visible;
+  background-color: #76cc1e;
+  color: #fff;
+}
+/* line 82, ../sass/ie.scss */
+.lt-ie7 .btn:hover {
+  background-color: #7edb21;
+}
+/* line 84, ../sass/ie.scss */
+.lt-ie7 a.alt, .lt-ie7 button.alt {
+  background-color: #4bb5eb;
+}
+/* line 85, ../sass/ie.scss */
+.lt-ie7 a.cancel {
+  background: transparent;
+  color: #565759;
+}
+/* line 85, ../sass/ie.scss */
+.lt-ie7 a.cancel:hover {
+  background-color: transparent;
+  color: #565759;
+}
+/* line 86, ../sass/ie.scss */
+.lt-ie7 .span16 {
+  margin-left: 20px;
+  width: 940px;
+}
+/* line 87, ../sass/ie.scss */
+.lt-ie7 #search-form button {
+  margin-left: -2px;
+  padding: 2px 14px 1px;
+}
+/* line 88, ../sass/ie.scss */
+.lt-ie7 #main-nav .nav li {
+  width: 19.86%;
+}
+/* line 90, ../sass/ie.scss */
+.lt-ie7 #main-nav .nav li.home a {
+  background-position: center 0;
+}
+/* line 91, ../sass/ie.scss */
+.lt-ie7 #main-nav .nav li.auctions a {
+  background-position: center -60px;
+}
+/* line 92, ../sass/ie.scss */
+.lt-ie7 #main-nav .nav li.upcoming a {
+  background-position: center -120px;
+}
+/* line 93, ../sass/ie.scss */
+.lt-ie7 #main-nav .nav li.history a {
+  background-position: center -180px;
+}
+/* line 94, ../sass/ie.scss */
+.lt-ie7 #main-nav .nav li.account a {
+  background-position: center -240px;
+}
+/* line 95, ../sass/ie.scss */
+.lt-ie7 #main-nav .nav li a {
+  width: 100%;
+}
+/* line 96, ../sass/ie.scss */
+.lt-ie7 #main-nav .nav li a:hover {
+  background-color: #3099dd;
+}
+/* line 101, ../sass/ie.scss */
+.lt-ie7 #sub-nav .phone, .lt-ie7 #sub-nav .language, .lt-ie7 #sub-nav .user, .lt-ie7 #sub-nav .login {
+  height: 30px;
+  padding-top: 7px;
+}
+/* line 102, ../sass/ie.scss */
+.lt-ie7 #sub-nav .language .dropdown-menu {
+  width: 120px;
+}
+/* line 105, ../sass/ie.scss */
+.lt-ie7 .home-page li.home a, .lt-ie7 .home-page li.home a:hover {
+  background-position: center -300px !important;
+  background-color: #4ab4e8 !important;
+}
+/* line 106, ../sass/ie.scss */
+.lt-ie7 .auctions-page li.auctions a, .lt-ie7 .auctions-page li.auctions a:hover {
+  background-position: center -360px !important;
+  background-color: #4ab4e8 !important;
+}
+/* line 107, ../sass/ie.scss */
+.lt-ie7 .upcoming-page li.upcoming a, .lt-ie7 .upcoming-page li.upcoming a:hover {
+  background-position: center -420px !important;
+  background-color: #4ab4e8 !important;
+}
+/* line 108, ../sass/ie.scss */
+.lt-ie7 .history-page li.history a, .lt-ie7 .history-page li.history a:hover {
+  background-position: center -480px !important;
+  background-color: #4ab4e8 !important;
+}
+/* line 109, ../sass/ie.scss */
+.lt-ie7 .account-page li.account a, .lt-ie7 .account-page li.account a:hover {
+  background-position: center -540px !important;
+  background-color: #4ab4e8 !important;
+}
+/* line 111, ../sass/ie.scss */
+.lt-ie7 .filter-col {
+  margin-left: 15px;
+  width: 190px;
+}
+/* line 112, ../sass/ie.scss */
+.lt-ie7 .menu-col .list li {
+  padding-bottom: 1px;
+  margin: 0;
+}
+/* line 113, ../sass/ie.scss */
+.lt-ie7 .menu-col .list li.active {
+  background-color: transparent;
+}
+/* line 114, ../sass/ie.scss */
+.lt-ie7 .menu-col .list li label {
+  padding-left: 10px;
+}
+/* line 116, ../sass/ie.scss */
+.lt-ie7 .table {
+  border: 1px solid #d2d8de;
+}
+/* line 118, ../sass/ie.scss */
+.lt-ie7 .carousel-inner .active {
+  background-color: #ffffff;
+}
+/* line 119, ../sass/ie.scss */
+.lt-ie7 .carousel, .lt-ie7 #myCarousel {
+  display: inline-block;
+}
+/* line 121, ../sass/ie.scss */
+.lt-ie7 .carousel .carousel-indicators li {
+  width: 9px;
+  height: 9px;
+  background: #cfcfcf;
+  border: none;
+}
+/* line 123, ../sass/ie.scss */
+.lt-ie7 .home-page .featured-section {
+  display: inline-block;
+}
+/* line 125, ../sass/ie.scss */
+.lt-ie7 .home-page .filter .title {
+  padding-left: 5px;
+  /* Sorry ugly fix. "Featured" is clipped without it. Dont know why. */
+}
+/* line 129, ../sass/ie.scss */
+.lt-ie7 .nav-pills li {
+  background: none;
+}
+/* line 131, ../sass/ie.scss */
+.lt-ie7 .nav-pills li.active a:hover {
+  background-color: #0088cc;
+}
+/* line 132, ../sass/ie.scss */
+.lt-ie7 .nav-pills li a:hover {
+  text-decoration: underline;
+  background: none;
+}
+/* line 136, ../sass/ie.scss */
+.lt-ie7 #dashboard section {
+  margin: 0 1%;
+}
+/* line 137, ../sass/ie.scss */
+.lt-ie7 #dashboard .summary {
+  width: 22.5%;
+}
+/* line 138, ../sass/ie.scss */
+.lt-ie7 #dashboard .summary li {
+  width: 70px;
+}
+/* line 142, ../sass/ie.scss */
+.lt-ie7 .panel li {
+  margin: 0;
+  padding-bottom: 1px;
+  overflow: hidden;
+  position: relative;
+}
+/* line 143, ../sass/ie.scss */
+.lt-ie7 .panel li a {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  padding: 8px 14px;
+}
+/* line 145, ../sass/ie.scss */
+.lt-ie7 .panel li a .title {
+  zoom: 1;
+  display: block;
+}
+/* line 148, ../sass/ie.scss */
+.lt-ie7 .panel header {
+  padding-bottom: 20px;
+}
+/* line 152, ../sass/ie.scss */
+.lt-ie7 .panel header h3, .lt-ie7 .panel header a {
+  line-height: 10px;
+}
+/* line 156, ../sass/ie.scss */
+.lt-ie7 .filter-col {
+  width: 150px;
+}
+/* line 157, ../sass/ie.scss */
+.lt-ie7 .table-col {
+  float: left;
+}
+/* line 158, ../sass/ie.scss */
+.lt-ie7 .main-table th {
+  vertical-align: middle;
+  text-align: center;
+}
+/* line 158, ../sass/ie.scss */
+.lt-ie7 .main-table th.item-name {
+  text-align: left;
+}
+/* line 161, ../sass/ie.scss */
+.lt-ie7 .login-option {
+  overflow: hidden !important;
+  height: 30px;
+}
+/* line 161, ../sass/ie.scss */
+.lt-ie7 .login-option a {
+  margin-top: 5px;
+}
+/* line 162, ../sass/ie.scss */
+.lt-ie7 .login-panel button {
+  display: block;
+  width: 100%;
+}
+/* line 165, ../sass/ie.scss */
+.lt-ie7 footer ul li {
+  width: 120px;
+}
+/* line 167, ../sass/ie.scss */
+.lt-ie7 #item-panel-holder {
+  position: absolute;
+  bottom: auto;
+  top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+}
+/* line 168, ../sass/ie.scss */
+.lt-ie7 .notification {
+  height: 23px;
+}
+/* line 171, ../sass/ie.scss */
+.lt-ie7 #item-cost .total td {
+  border-top: none !important;
+}
+/* line 172, ../sass/ie.scss */
+.lt-ie7 #item-cost .more {
+  background-color: transparent !important;
+}
+/* line 174, ../sass/ie.scss */
+.lt-ie7 #item-history .legend b {
+  font-size: 0;
+}
+/* line 177, ../sass/ie.scss */
+.lt-ie7 #item-bids ol {
+  width: 44%;
+}
+/* line 177, ../sass/ie.scss */
+.lt-ie7 #item-bids ol li {
+  margin-bottom: 20px;
+}
+/* line 177, ../sass/ie.scss */
+.lt-ie7 #item-bids ol .time {
+  margin-top: -20px;
+}
+/* line 178, ../sass/ie.scss */
+.lt-ie7 .bidding-panel {
+  overflow: hidden;
+}
+/* line 178, ../sass/ie.scss */
+.lt-ie7 .bidding-panel .disabled {
+  background-color: #cbcbcb;
+}
+/* line 179, ../sass/ie.scss */
+.lt-ie7 .primary, .lt-ie7 .secondary {
+  margin-bottom: -20px;
+}
+/* line 181, ../sass/ie.scss */
+.lt-ie7 .signup-panel .terms {
+  text-align: left;
+  width: auto;
+}
+/* line 182, ../sass/ie.scss */
+.lt-ie7 .signup-panel .controls {
+  width: 370px;
+  overflow: hidden;
+}
+/* line 183, ../sass/ie.scss */
+.lt-ie7 .signup-panel .controls .text {
+  width: 350px;
+}
+/* line 184, ../sass/ie.scss */
+.lt-ie7 .signup-panel .controls .control-label {
+  text-align: left;
+}
+/* line 185, ../sass/ie.scss */
+.lt-ie7 .signup-panel .controls .radio input {
+  margin-top: 0;
+}
+/* line 187, ../sass/ie.scss */
+.lt-ie7 .signup-panel .span11 {
+  width: 640px;
+}
+/* line 188, ../sass/ie.scss */
+.lt-ie7 .signup-panel .help {
+  width: 200px;
+}
+/* line 191, ../sass/ie.scss */
+.lt-ie7 .account-page .tabbable {
+  margin-top: 0;
+}
+/* line 193, ../sass/ie.scss */
+.lt-ie7 #account-tabs {
+  float: left;
+  width: 180px;
+}
+/* line 194, ../sass/ie.scss */
+.lt-ie7 #account-tabs li, .lt-ie7 #account-tabs li a {
+  background: none;
+}
+/* line 197, ../sass/ie.scss */
+.lt-ie7 .account-panes {
+  overflow: hidden;
+}
+/* line 198, ../sass/ie.scss */
+.lt-ie7 .account-panes .tab-pane {
+  display: none !important;
+  background-color: transparent;
+}
+/* line 199, ../sass/ie.scss */
+.lt-ie7 .account-panes .settings-pane {
+  background-color: #fff;
+}
+/* line 200, ../sass/ie.scss */
+.lt-ie7 .account-panes .active {
+  display: block !important;
+}
+/* line 205, ../sass/ie.scss */
+.lt-ie7 #delivery-bill header {
+  float: left;
+}
+/* line 205, ../sass/ie.scss */
+.lt-ie7 #delivery-bill header span {
+  float: left;
+  margin-top: 8px;
+}
+/* line 206, ../sass/ie.scss */
+.lt-ie7 #delivery-bill .span6 h3 {
+  line-height: 1;
+}
+/* line 208, ../sass/ie.scss */
+.lt-ie7 #delivery-panel {
+  position: static;
+  margin-bottom: 20px;
+  width: 755px;
+}
+/* line 210, ../sass/ie.scss */
+.lt-ie7 #delivery-address ul li {
+  width: 45%;
+}
+/* line 211, ../sass/ie.scss */
+.lt-ie7 textarea {
+  border: 2px solid #cbcfd2;
+}
+/* line 213, ../sass/ie.scss */
+.lt-ie7 #pickup-point-air option {
+  background-color: #fff;
+  border: none !important;
+}
+/* line 215, ../sass/ie.scss */
+.lt-ie7 #close-panel {
+  background-image: url("../img/ico-close-panel.gif");
+}

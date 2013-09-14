@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Project Styleguide by Minitheory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet" media="screen">
+    <link href="css/styleguide.css" rel="stylesheet" media="screen">
+    <link href="css/prettify.css" rel="stylesheet" media="screen">
+
+  </head>
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Project Styleguide 1.0</a>
+          <div class="nav-collapse collapse">
+            
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="span12">
+          <div class="tabbable tabs-left">
+            <ul class="nav nav-tabs" id="main-nav">
+              <li><a href="#typography">Typography</a></li>
+              <li class="active"><a href="#buttons">Buttons</a></li>
+              <li><a href="#forms">Forms</a></li>
+              <li><a href="#glyphs">Glyphs</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane" id="typography">
+                <h2>Typography</h2>
+                <h3>1. Headings</h3>
+                <div class="style-container">
+                  <h1>h1. Heading 1</h1>
+                  <h2>h2. Heading 2</h2>
+                  <h3>h3. Heading 3</h3>
+                  <h4>h4. Heading 4</h4>
+                  <h5>h5. Heading 5</h5>
+                  <h6>h6. Heading 6</h6>
+                </div>
+                <br/>
+                <h3>2. Body text</h3>
+                <div class="style-container">
+                  <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                  <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.</p>
+                </div>
+                <br/>
+                <h3>3. Blockquote</h3>
+                <div class="style-container">
+                  <blockquote>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                  </blockquote>
+                </div>
+              </div><!--/Typography-->
+
+
+              <div class="tab-pane active" id="buttons">
+                <h2>Buttons</h2>
+                <h3>1. Standard Buttons</h3>
+                <ul class="style-list">
+                  <li>
+                    <a href="" class="btn">Default Button</a>
+                  </li>
+                  <li>
+                    <a href="" class="btn disabled">Disabled Button</a>
+                    <span>.disabled</span>
+                  </li>
+                  <li>
+                    <a href="" class="btn btn-primary">Primary Button</a>
+                    <span>.btn-primary</span>
+                  </li>
+                  <li>
+                    <a href="" class="btn btn-info">Info Button</a>
+                    <span>.btn-info</span>
+                  </li>
+                  <li>
+                    <a href="" class="btn btn-warning">Warning Button</a>
+                    <span>.btn-warning</span>
+                  </li>
+                  <li>
+                    <a href="" class="btn btn-large">Large Button</a>
+                    <span>.btn-large</span>
+                  </li>
+                  <li>
+                    <a href="" class="btn btn-small">Small Button</a>
+                    <span>.btn-small</span>
+                  </li>
+                  <li>
+                    <a href="" class="btn btn-mini">Mini Button</a>
+                    <span>.btn-mini</span>
+                  </li>
+                  <li class="code">
+                    <code>&lt;a class="btn"&gt;Default Button&lt;/a&gt;</code>
+                  </li>
+                </ul>
+                <h3>2. Icon Buttons</h3>
+                <ul class="style-list">
+                  <li>
+                    <a href="" class="btn"><i class="icon-star"></i> Star Button</a>
+                  </li>
+                  <li>
+                    <a href="" class="btn btn-primary"><i class="icon-star icon-white"></i> Star Button</a>
+                    <span>.icon-white</span>
+                  </li>
+
+                  <li class="code">
+                    <code>&lt;a class="btn"&gt;&lt;i class="icon-star"&gt;&lt;/i&gt;Star Button&lt;/a&gt;</code>
+                  </li>
+                </ul>
+                <h3>3. Dropdown Buttons</h3>
+                <div class="style-container">
+                  <div class="btn-group">
+                    <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> User</a>
+                    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href=""><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href=""><i class="icon-pencil"></i> Edit</a></li>
+                      <li><a href=""><i class="icon-trash"></i> Delete</a></li>
+                      <li><a href=""><i class="icon-ban-circle"></i> Ban</a></li>
+                      <li class="divider"></li>
+                      <li><a href=""><i class="i"></i> Make admin</a></li>
+                    </ul>
+                  </div>
+                  <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn-group"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn dropdown-toggle"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"dropdown"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"#"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">    Action</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"caret"</span><span class="tag">&gt;&lt;/span&gt;</span></li><li class="L4"><span class="pln">  </span><span class="tag">&lt;/a&gt;</span></li><li class="L5"><span class="pln">  </span><span class="tag">&lt;ul</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"dropdown-menu"</span><span class="tag">&gt;</span></li><li class="L6"><span class="pln">    </span><span class="com">&lt;!-- dropdown menu links --&gt;</span></li><li class="L7"><span class="pln">  </span><span class="tag">&lt;/ul&gt;</span></li><li class="L8"><span class="tag">&lt;/div&gt;</span></li></ol></pre>
+                </div>
+              </div><!--/Buttons-->
+
+
+              <div class="tab-pane" id="forms">
+                <h2>Forms</h2>
+                  <section id="forms">
+                    <h3>1. Default styles</h3> 
+                    <p>Individual form controls receive styling, but without any required base class on the <code>&lt;form&gt;</code> or large changes in markup. Results in stacked, left-aligned labels on top of form controls.</p>
+                    <form class="bs-docs-example">
+                      <fieldset>
+                        <legend>Legend</legend>
+                        <label>Label name</label>
+                        <input type="text" placeholder="Type something…">
+                        <span class="help-block">Example block-level help text here.</span>
+                        <label class="checkbox">
+                          <input type="checkbox"> Check me out
+                        </label>
+                        <button type="submit" class="btn">Submit</button>
+                      </fieldset>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;form&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;fieldset&gt;</span></li><li class="L2"><span class="pln">    </span><span class="tag">&lt;legend&gt;</span><span class="pln">Legend</span><span class="tag">&lt;/legend&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;label&gt;</span><span class="pln">Label name</span><span class="tag">&lt;/label&gt;</span></li><li class="L4"><span class="pln">    </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">placeholder</span><span class="pun">=</span><span class="atv">"Type something…"</span><span class="tag">&gt;</span></li><li class="L5"><span class="pln">    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"help-block"</span><span class="tag">&gt;</span><span class="pln">Example block-level help text here.</span><span class="tag">&lt;/span&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"checkbox"</span><span class="tag">&gt;</span></li><li class="L7"><span class="pln">      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"checkbox"</span><span class="tag">&gt;</span><span class="pln"> Check me out</span></li><li class="L8"><span class="pln">    </span><span class="tag">&lt;/label&gt;</span></li><li class="L9"><span class="pln">    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="tag">&gt;</span><span class="pln">Submit</span><span class="tag">&lt;/button&gt;</span></li><li class="L0"><span class="pln">  </span><span class="tag">&lt;/fieldset&gt;</span></li><li class="L1"><span class="tag">&lt;/form&gt;</span></li></ol></pre>
+
+                    <hr class="bs-docs-separator">
+
+
+              
+                    <h3>Search form</h3>
+                    <p>Add <code>.form-search</code> to the form and <code>.search-query</code> to the <code>&lt;input&gt;</code> for an extra-rounded text input.</p>
+                    <form class="bs-docs-example form-search">
+                      <input type="text" class="input-medium search-query">
+                      <button type="submit" class="btn">Search</button>
+                    </form>
+
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-search"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-medium search-query"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="tag">&gt;</span><span class="pln">Search</span><span class="tag">&lt;/button&gt;</span></li><li class="L3"><span class="tag">&lt;/form&gt;</span></li></ol></pre>
+
+                    <h3>Inline form</h3>
+                    <p>Add <code>.form-inline</code> for left-aligned labels and inline-block controls for a compact layout.</p>
+                    <form class="bs-docs-example form-inline">
+                      <input type="text" class="input-small" placeholder="Email">
+                      <input type="password" class="input-small" placeholder="Password">
+                      <label class="checkbox">
+                        <input type="checkbox"> Remember me
+                      </label>
+                      <button type="submit" class="btn">Sign in</button>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-inline"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-small"</span><span class="pln"> </span><span class="atn">placeholder</span><span class="pun">=</span><span class="atv">"Email"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"password"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-small"</span><span class="pln"> </span><span class="atn">placeholder</span><span class="pun">=</span><span class="atv">"Password"</span><span class="tag">&gt;</span></li><li class="L3"><span class="pln">  </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"checkbox"</span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">    </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"checkbox"</span><span class="tag">&gt;</span><span class="pln"> Remember me</span></li><li class="L5"><span class="pln">  </span><span class="tag">&lt;/label&gt;</span></li><li class="L6"><span class="pln">  </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="tag">&gt;</span><span class="pln">Sign in</span><span class="tag">&lt;/button&gt;</span></li><li class="L7"><span class="tag">&lt;/form&gt;</span></li></ol></pre>
+
+                    <h3>Horizontal form</h3>
+                  <br/>
+                    <form class="bs-docs-example form-horizontal">
+                      <div class="control-group">
+                        <label class="control-label" for="inputEmail">Email</label>
+                        <div class="controls">
+                          <input type="text" id="inputEmail" placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <label class="control-label" for="inputPassword">Password</label>
+                        <div class="controls">
+                          <input type="password" id="inputPassword" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <div class="controls">
+                          <label class="checkbox">
+                            <input type="checkbox"> Remember me
+                          </label>
+                          <button type="submit" class="btn">Sign in</button>
+                        </div>
+                      </div>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-horizontal"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-group"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">    </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-label"</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"inputEmail"</span><span class="tag">&gt;</span><span class="pln">Email</span><span class="tag">&lt;/label&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"controls"</span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"inputEmail"</span><span class="pln"> </span><span class="atn">placeholder</span><span class="pun">=</span><span class="atv">"Email"</span><span class="tag">&gt;</span></li><li class="L5"><span class="pln">    </span><span class="tag">&lt;/div&gt;</span></li><li class="L6"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L7"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-group"</span><span class="tag">&gt;</span></li><li class="L8"><span class="pln">    </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-label"</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"inputPassword"</span><span class="tag">&gt;</span><span class="pln">Password</span><span class="tag">&lt;/label&gt;</span></li><li class="L9"><span class="pln">    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"controls"</span><span class="tag">&gt;</span></li><li class="L0"><span class="pln">      </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"password"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"inputPassword"</span><span class="pln"> </span><span class="atn">placeholder</span><span class="pun">=</span><span class="atv">"Password"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">    </span><span class="tag">&lt;/div&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L3"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-group"</span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"controls"</span><span class="tag">&gt;</span></li><li class="L5"><span class="pln">      </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"checkbox"</span><span class="tag">&gt;</span></li><li class="L6"><span class="pln">        </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"checkbox"</span><span class="tag">&gt;</span><span class="pln"> Remember me</span></li><li class="L7"><span class="pln">      </span><span class="tag">&lt;/label&gt;</span></li><li class="L8"><span class="pln">      </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="tag">&gt;</span><span class="pln">Sign in</span><span class="tag">&lt;/button&gt;</span></li><li class="L9"><span class="pln">    </span><span class="tag">&lt;/div&gt;</span></li><li class="L0"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L1"><span class="tag">&lt;/form&gt;</span></li></ol></pre>
+
+
+                    <hr class="bs-docs-separator">
+
+
+                    <h2>Supported form controls</h2>
+                   
+                    <h3>Inputs</h3>
+                    <form class="bs-docs-example form-inline">
+                      <input type="text" placeholder="Text input">
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">placeholder</span><span class="pun">=</span><span class="atv">"Text input"</span><span class="tag">&gt;</span></li></ol></pre>
+
+                    <h3>Textarea</h3>
+                    <form class="bs-docs-example form-inline">
+                      <textarea rows="3"></textarea>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;textarea</span><span class="pln"> </span><span class="atn">rows</span><span class="pun">=</span><span class="atv">"3"</span><span class="tag">&gt;&lt;/textarea&gt;</span></li></ol></pre>
+                   
+                    <form class="bs-docs-example">
+                      <label class="checkbox">
+                        <input type="checkbox" value="">
+                        Option one is this and that&mdash;be sure to include why it's great
+                      </label>
+                      <br>
+                      <label class="radio">
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                        Option one is this and that&mdash;be sure to include why it's great
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        Option two can be something else and selecting it will deselect option one
+                      </label>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"checkbox"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"checkbox"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">""</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">  Option one is this and that—be sure to include why it's great</span></li><li class="L3"><span class="tag">&lt;/label&gt;</span></li><li class="L4"><span class="pln">&nbsp;</span></li><li class="L5"><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"radio"</span><span class="tag">&gt;</span></li><li class="L6"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"radio"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"optionsRadios"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"optionsRadios1"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"option1"</span><span class="pln"> </span><span class="atn">checked</span><span class="tag">&gt;</span></li><li class="L7"><span class="pln">  Option one is this and that—be sure to include why it's great</span></li><li class="L8"><span class="tag">&lt;/label&gt;</span></li><li class="L9"><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"radio"</span><span class="tag">&gt;</span></li><li class="L0"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"radio"</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"optionsRadios"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"optionsRadios2"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"option2"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  Option two can be something else and selecting it will deselect option one</span></li><li class="L2"><span class="tag">&lt;/label&gt;</span></li></ol></pre>
+
+                    <h4>checkboxes</h4>
+                    <form class="bs-docs-example">
+                      <label class="checkbox">
+                        <input type="checkbox" id="Checkbox1" value="option1"> 1
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="Checkbox2" value="option2"> 2
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" id="Checkbox3" value="option3"> 3
+                      </label>
+                    </form>
+                    
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"checkbox inline"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"checkbox"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"Checkbox1"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"option1"</span><span class="tag">&gt;</span><span class="pln"> 1</span></li><li class="L2"><span class="tag">&lt;/label&gt;</span></li><li class="L3"><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"checkbox inline"</span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"checkbox"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"Checkbox2"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"option2"</span><span class="tag">&gt;</span><span class="pln"> 2</span></li><li class="L5"><span class="tag">&lt;/label&gt;</span></li><li class="L6"><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"checkbox inline"</span><span class="tag">&gt;</span></li><li class="L7"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"checkbox"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"Checkbox3"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"option3"</span><span class="tag">&gt;</span><span class="pln"> 3</span></li><li class="L8"><span class="tag">&lt;/label&gt;</span></li></ol></pre>
+
+                    <h3>Selects</h3>
+                    <p>Use the default option or specify a <code>multiple="multiple"</code> to show multiple options at once.</p>
+                    <form class="bs-docs-example">
+                      <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                      <br>
+                      <select multiple="multiple">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </form>
+                  
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;select&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;option&gt;</span><span class="pln">1</span><span class="tag">&lt;/option&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;option&gt;</span><span class="pln">2</span><span class="tag">&lt;/option&gt;</span></li><li class="L3"><span class="pln">  </span><span class="tag">&lt;option&gt;</span><span class="pln">3</span><span class="tag">&lt;/option&gt;</span></li><li class="L4"><span class="pln">  </span><span class="tag">&lt;option&gt;</span><span class="pln">4</span><span class="tag">&lt;/option&gt;</span></li><li class="L5"><span class="pln">  </span><span class="tag">&lt;option&gt;</span><span class="pln">5</span><span class="tag">&lt;/option&gt;</span></li><li class="L6"><span class="tag">&lt;/select&gt;</span></li><li class="L7"><span class="pln">&nbsp;</span></li><li class="L8"><span class="tag">&lt;select</span><span class="pln"> </span><span class="atn">multiple</span><span class="pun">=</span><span class="atv">"multiple"</span><span class="tag">&gt;</span></li><li class="L9"><span class="pln">  </span><span class="tag">&lt;option&gt;</span><span class="pln">1</span><span class="tag">&lt;/option&gt;</span></li><li class="L0"><span class="pln">  </span><span class="tag">&lt;option&gt;</span><span class="pln">2</span><span class="tag">&lt;/option&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;option&gt;</span><span class="pln">3</span><span class="tag">&lt;/option&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;option&gt;</span><span class="pln">4</span><span class="tag">&lt;/option&gt;</span></li><li class="L3"><span class="pln">  </span><span class="tag">&lt;option&gt;</span><span class="pln">5</span><span class="tag">&lt;/option&gt;</span></li><li class="L4"><span class="tag">&lt;/select&gt;</span></li></ol></pre>
+                    <hr class="bs-docs-separator">
+
+
+                    <h2>Extending form controls</h2>
+                    <p>Adding on top of existing browser controls, Bootstrap includes other useful form components.</p>
+
+                    
+                    <h4>Default options</h4>
+                    <p>Wrap an <code>.add-on</code> and an <code>input</code> with one of two classes to prepend or append text to an input.</p>
+                    <form class="bs-docs-example">
+                      <div class="input-prepend">
+                        <span class="add-on">@</span>
+                        <input class="span2" id="prependedInput" type="text" placeholder="Username">
+                      </div>
+                      <br>
+                      <div class="input-append">
+                        <input class="span2" id="appendedInput" type="text">
+                        <span class="add-on">.00</span>
+                      </div>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-prepend"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"add-on"</span><span class="tag">&gt;</span><span class="pln">@</span><span class="tag">&lt;/span&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"span2"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"prependedInput"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">placeholder</span><span class="pun">=</span><span class="atv">"Username"</span><span class="tag">&gt;</span></li><li class="L3"><span class="tag">&lt;/div&gt;</span></li><li class="L4"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-append"</span><span class="tag">&gt;</span></li><li class="L5"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"span2"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"appendedInput"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="tag">&gt;</span></li><li class="L6"><span class="pln">  </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"add-on"</span><span class="tag">&gt;</span><span class="pln">.00</span><span class="tag">&lt;/span&gt;</span></li><li class="L7"><span class="tag">&lt;/div&gt;</span></li></ol></pre>
+
+                    <h4>Combined</h4>
+                    <p>Use both classes and two instances of <code>.add-on</code> to prepend and append an input.</p>
+                    <form class="bs-docs-example form-inline">
+                      <div class="input-prepend input-append">
+                        <span class="add-on">$</span>
+                        <input class="span2" id="appendedPrependedInput" type="text">
+                        <span class="add-on">.00</span>
+                      </div>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-prepend input-append"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"add-on"</span><span class="tag">&gt;</span><span class="pln">$</span><span class="tag">&lt;/span&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"span2"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"appendedPrependedInput"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="tag">&gt;</span></li><li class="L3"><span class="pln">  </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"add-on"</span><span class="tag">&gt;</span><span class="pln">.00</span><span class="tag">&lt;/span&gt;</span></li><li class="L4"><span class="tag">&lt;/div&gt;</span></li></ol></pre>
+
+                    <h4>Buttons instead of text</h4>
+                    <p>Instead of a <code>&lt;span&gt;</code> with text, use a <code>.btn</code> to attach a button (or two) to an input.</p>
+                    <form class="bs-docs-example">
+                      <div class="input-append">
+                        <input class="span2" id="appendedInputButton" type="text">
+                        <button class="btn" type="button">Go!</button>
+                      </div>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-append"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"span2"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"appendedInputButton"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="tag">&gt;</span><span class="pln">Go!</span><span class="tag">&lt;/button&gt;</span></li><li class="L3"><span class="tag">&lt;/div&gt;</span></li></ol></pre>
+                    <form class="bs-docs-example">
+                      <div class="input-append">
+                        <input class="span2" id="appendedInputButtons" type="text">
+                        <button class="btn" type="button">Search</button>
+                        <button class="btn" type="button">Options</button>
+                      </div>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-append"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"span2"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"appendedInputButtons"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="tag">&gt;</span><span class="pln">Search</span><span class="tag">&lt;/button&gt;</span></li><li class="L3"><span class="pln">  </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="tag">&gt;</span><span class="pln">Options</span><span class="tag">&lt;/button&gt;</span></li><li class="L4"><span class="tag">&lt;/div&gt;</span></li></ol></pre>
+                    <h4>Button dropdowns</h4>
+                    <p></p>
+                    <form class="bs-docs-example">
+                      <div class="input-append">
+                        <input class="span2" id="appendedDropdownButton" type="text">
+                        <div class="btn-group">
+                          <button class="btn dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                          </ul>
+                        </div><!-- /btn-group -->
+                      </div><!-- /input-append -->
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-append"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"span2"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"appendedDropdownButton"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn-group"</span><span class="tag">&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn dropdown-toggle"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"dropdown"</span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">      Action</span></li><li class="L5"><span class="pln">      </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"caret"</span><span class="tag">&gt;&lt;/span&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;/button&gt;</span></li><li class="L7"><span class="pln">    </span><span class="tag">&lt;ul</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"dropdown-menu"</span><span class="tag">&gt;</span></li><li class="L8"><span class="pln">      ...</span></li><li class="L9"><span class="pln">    </span><span class="tag">&lt;/ul&gt;</span></li><li class="L0"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L1"><span class="tag">&lt;/div&gt;</span></li></ol></pre>
+
+                    <form class="bs-docs-example">
+                      <div class="input-prepend">
+                        <div class="btn-group">
+                          <button class="btn dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                          </ul>
+                        </div><!-- /btn-group -->
+                        <input class="span2" id="prependedDropdownButton" type="text">
+                      </div><!-- /input-prepend -->
+                    </form>
+                   <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-prepend"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn-group"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn dropdown-toggle"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"dropdown"</span><span class="tag">&gt;</span></li><li class="L3"><span class="pln">      Action</span></li><li class="L4"><span class="pln">      </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"caret"</span><span class="tag">&gt;&lt;/span&gt;</span></li><li class="L5"><span class="pln">    </span><span class="tag">&lt;/button&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;ul</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"dropdown-menu"</span><span class="tag">&gt;</span></li><li class="L7"><span class="pln">      ...</span></li><li class="L8"><span class="pln">    </span><span class="tag">&lt;/ul&gt;</span></li><li class="L9"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L0"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"span2"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"prependedDropdownButton"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="tag">&gt;</span></li><li class="L1"><span class="tag">&lt;/div&gt;</span></li></ol></pre>
+                    <form class="bs-docs-example">
+                      <div class="input-prepend input-append">
+                        <div class="btn-group">
+                          <button class="btn dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                          </ul>
+                        </div><!-- /btn-group -->
+                        <input class="span2" id="appendedPrependedDropdownButton" type="text">
+                        <div class="btn-group">
+                          <button class="btn dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                          </ul>
+                        </div><!-- /btn-group -->
+                      </div><!-- /input-prepend input-append -->
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-prepend input-append"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn-group"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn dropdown-toggle"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"dropdown"</span><span class="tag">&gt;</span></li><li class="L3"><span class="pln">      Action</span></li><li class="L4"><span class="pln">      </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"caret"</span><span class="tag">&gt;&lt;/span&gt;</span></li><li class="L5"><span class="pln">    </span><span class="tag">&lt;/button&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;ul</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"dropdown-menu"</span><span class="tag">&gt;</span></li><li class="L7"><span class="pln">      ...</span></li><li class="L8"><span class="pln">    </span><span class="tag">&lt;/ul&gt;</span></li><li class="L9"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L0"><span class="pln">  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"span2"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"appendedPrependedDropdownButton"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn-group"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn dropdown-toggle"</span><span class="pln"> </span><span class="atn">data-toggle</span><span class="pun">=</span><span class="atv">"dropdown"</span><span class="tag">&gt;</span></li><li class="L3"><span class="pln">      Action</span></li><li class="L4"><span class="pln">      </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"caret"</span><span class="tag">&gt;&lt;/span&gt;</span></li><li class="L5"><span class="pln">    </span><span class="tag">&lt;/button&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;ul</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"dropdown-menu"</span><span class="tag">&gt;</span></li><li class="L7"><span class="pln">      ...</span></li><li class="L8"><span class="pln">    </span><span class="tag">&lt;/ul&gt;</span></li><li class="L9"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L0"><span class="tag">&lt;/div&gt;</span></li></ol></pre>
+
+                    <h4>Segmented dropdown groups</h4>
+                    <form class="bs-docs-example">
+                      <div class="input-prepend">
+                        <div class="btn-group">
+                          <button class="btn" tabindex="-1">Action</button>
+                          <button class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                          </ul>
+                        </div>
+                        <input type="text">
+                      </div>
+                      <div class="input-append">
+                        <input type="text">
+                        <div class="btn-group">
+                          <button class="btn" tabindex="-1">Action</button>
+                          <button class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;form&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-prepend"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn-group"</span><span class="tag">&gt;</span><span class="pln">...</span><span class="tag">&lt;/div&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L5"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-append"</span><span class="tag">&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="tag">&gt;</span></li><li class="L7"><span class="pln">    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn-group"</span><span class="tag">&gt;</span><span class="pln">...</span><span class="tag">&lt;/div&gt;</span></li><li class="L8"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L9"><span class="tag">&lt;/form&gt;</span></li></ol></pre>
+
+                    <h4>Search form</h4>
+                    <form class="bs-docs-example form-search">
+                      <div class="input-append">
+                        <input type="text" class="span2 search-query">
+                        <button type="submit" class="btn">Search</button>
+                      </div>
+                      <div class="input-prepend">
+                        <button type="submit" class="btn">Search</button>
+                        <input type="text" class="span2 search-query">
+                      </div>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-search"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-append"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">    </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"span2 search-query"</span><span class="tag">&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="tag">&gt;</span><span class="pln">Search</span><span class="tag">&lt;/button&gt;</span></li><li class="L4"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L5"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-prepend"</span><span class="tag">&gt;</span></li><li class="L6"><span class="pln">    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="tag">&gt;</span><span class="pln">Search</span><span class="tag">&lt;/button&gt;</span></li><li class="L7"><span class="pln">    </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"span2 search-query"</span><span class="tag">&gt;</span></li><li class="L8"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L9"><span class="tag">&lt;/form&gt;</span></li></ol></pre>
+
+                    <h3>Uneditable inputs</h3>
+                    <p>Present data in a form that's not editable without using actual form markup.</p>
+                    <form class="bs-docs-example">
+                      <span class="input-xlarge uneditable-input">Some value here</span>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-xlarge uneditable-input"</span><span class="tag">&gt;</span><span class="pln">Some value here</span><span class="tag">&lt;/span&gt;</span></li></ol></pre>
+                    
+
+                    <hr class="bs-docs-separator">
+
+
+                    <h2>Form control states</h2>
+                    
+
+                    <h3>Input focus</h3>
+                    <form class="bs-docs-example form-inline">
+                      <input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused...">
+                    </form>
+                    <ol class="linenums"><li class="L0"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-xlarge"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"focusedInput"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"This is focused..."</span><span class="tag">&gt;</span></li></ol>
+
+                    <h3>Invalid inputs</h3>
+                    <p>Style inputs via default browser functionality with <code>:invalid</code>. Specify a <code>type</code>, add the <code>required</code> attribute if the field is not optional, and (if applicable) specify a <code>pattern</code>.</p>
+                    <p>This is not available in versions of Internet Explorer 7-9 due to lack of support for CSS pseudo selectors.</p>
+                    <form class="bs-docs-example form-inline">
+                      <input class="span3" type="email" placeholder="test@example.com" required>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"span3"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"email"</span><span class="pln"> </span><span class="atn">required</span><span class="tag">&gt;</span></li></ol></pre>
+
+                    <h3>Disabled inputs</h3>
+                    <p>Add the <code>disabled</code> attribute on an input to prevent user input and trigger a slightly different look.</p>
+                    <form class="bs-docs-example form-inline">
+                      <input class="input-xlarge" id="disabledInput" type="text" placeholder="Disabled input here…" disabled>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"input-xlarge"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"disabledInput"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">placeholder</span><span class="pun">=</span><span class="atv">"Disabled input here..."</span><span class="pln"> </span><span class="atn">disabled</span><span class="tag">&gt;</span></li></ol></pre>
+                    
+                    <h3>Validation states</h3>
+                    <p>Bootstrap includes validation styles for error, warning, info, and success messages. To use, add the appropriate class to the surrounding <code>.control-group</code>.</p>
+
+                    <form class="bs-docs-example form-horizontal">
+                      <div class="control-group warning">
+                        <label class="control-label" for="inputWarning">Input with warning</label>
+                        <div class="controls">
+                          <input type="text" id="inputWarning">
+                          <span class="help-inline">Something may have gone wrong</span>
+                        </div>
+                      </div>
+                      <div class="control-group error">
+                        <label class="control-label" for="inputError">Input with error</label>
+                        <div class="controls">
+                          <input type="text" id="inputError">
+                          <span class="help-inline">Please correct the error</span>
+                        </div>
+                      </div>
+                      <div class="control-group info">
+                        <label class="control-label" for="inputInfo">Input with info</label>
+                        <div class="controls">
+                          <input type="text" id="inputInfo">
+                          <span class="help-inline">Username is taken</span>
+                        </div>
+                      </div>
+                      <div class="control-group success">
+                        <label class="control-label" for="inputSuccess">Input with success</label>
+                        <div class="controls">
+                          <input type="text" id="inputSuccess">
+                          <span class="help-inline">Woohoo!</span>
+                        </div>
+                      </div>
+                    </form>
+                    <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-group warning"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-label"</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"inputWarning"</span><span class="tag">&gt;</span><span class="pln">Input with warning</span><span class="tag">&lt;/label&gt;</span></li><li class="L2"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"controls"</span><span class="tag">&gt;</span></li><li class="L3"><span class="pln">    </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"inputWarning"</span><span class="tag">&gt;</span></li><li class="L4"><span class="pln">    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"help-inline"</span><span class="tag">&gt;</span><span class="pln">Something may have gone wrong</span><span class="tag">&lt;/span&gt;</span></li><li class="L5"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L6"><span class="tag">&lt;/div&gt;</span></li><li class="L7"><span class="pln">&nbsp;</span></li><li class="L8"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-group error"</span><span class="tag">&gt;</span></li><li class="L9"><span class="pln">  </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-label"</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"inputError"</span><span class="tag">&gt;</span><span class="pln">Input with error</span><span class="tag">&lt;/label&gt;</span></li><li class="L0"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"controls"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln">    </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"inputError"</span><span class="tag">&gt;</span></li><li class="L2"><span class="pln">    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"help-inline"</span><span class="tag">&gt;</span><span class="pln">Please correct the error</span><span class="tag">&lt;/span&gt;</span></li><li class="L3"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L4"><span class="tag">&lt;/div&gt;</span></li><li class="L5"><span class="pln">&nbsp;</span></li><li class="L6"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-group info"</span><span class="tag">&gt;</span></li><li class="L7"><span class="pln">  </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-label"</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"inputInfo"</span><span class="tag">&gt;</span><span class="pln">Input with info</span><span class="tag">&lt;/label&gt;</span></li><li class="L8"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"controls"</span><span class="tag">&gt;</span></li><li class="L9"><span class="pln">    </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"inputInfo"</span><span class="tag">&gt;</span></li><li class="L0"><span class="pln">    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"help-inline"</span><span class="tag">&gt;</span><span class="pln">Username is already taken</span><span class="tag">&lt;/span&gt;</span></li><li class="L1"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L2"><span class="tag">&lt;/div&gt;</span></li><li class="L3"><span class="pln">&nbsp;</span></li><li class="L4"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-group success"</span><span class="tag">&gt;</span></li><li class="L5"><span class="pln">  </span><span class="tag">&lt;label</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"control-label"</span><span class="pln"> </span><span class="atn">for</span><span class="pun">=</span><span class="atv">"inputSuccess"</span><span class="tag">&gt;</span><span class="pln">Input with success</span><span class="tag">&lt;/label&gt;</span></li><li class="L6"><span class="pln">  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"controls"</span><span class="tag">&gt;</span></li><li class="L7"><span class="pln">    </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"inputSuccess"</span><span class="tag">&gt;</span></li><li class="L8"><span class="pln">    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"help-inline"</span><span class="tag">&gt;</span><span class="pln">Woohoo!</span><span class="tag">&lt;/span&gt;</span></li><li class="L9"><span class="pln">  </span><span class="tag">&lt;/div&gt;</span></li><li class="L0"><span class="tag">&lt;/div&gt;</span></li></ol></pre>
+
+                  </section>
+              </div><!--/Forms-->
+
+
+              <div class="tab-pane" id="glyphs">
+                <h2>Glyphs<small> by <a href="http://glyphicons.com" target="_blank">Glyphicons</a></small></h2>
+                <br/>
+                <!-- Icons
+                ================================================== -->
+                <section id="icons">
+                  <p>140 icons in sprite form, available in dark gray (default) and white, provided by <a href="http://glyphicons.com" target="_blank">Glyphicons</a>.</p>
+                  <ul class="the-icons clearfix">
+                    <li><i class="icon-glass"></i> icon-glass</li>
+                    <li><i class="icon-music"></i> icon-music</li>
+                    <li><i class="icon-search"></i> icon-search</li>
+                    <li><i class="icon-envelope"></i> icon-envelope</li>
+                    <li><i class="icon-heart"></i> icon-heart</li>
+                    <li><i class="icon-star"></i> icon-star</li>
+                    <li><i class="icon-star-empty"></i> icon-star-empty</li>
+                    <li><i class="icon-user"></i> icon-user</li>
+                    <li><i class="icon-film"></i> icon-film</li>
+                    <li><i class="icon-th-large"></i> icon-th-large</li>
+                    <li><i class="icon-th"></i> icon-th</li>
+                    <li><i class="icon-th-list"></i> icon-th-list</li>
+                    <li><i class="icon-ok"></i> icon-ok</li>
+                    <li><i class="icon-remove"></i> icon-remove</li>
+                    <li><i class="icon-zoom-in"></i> icon-zoom-in</li>
+                    <li><i class="icon-zoom-out"></i> icon-zoom-out</li>
+                    <li><i class="icon-off"></i> icon-off</li>
+                    <li><i class="icon-signal"></i> icon-signal</li>
+                    <li><i class="icon-cog"></i> icon-cog</li>
+                    <li><i class="icon-trash"></i> icon-trash</li>
+                    <li><i class="icon-home"></i> icon-home</li>
+                    <li><i class="icon-file"></i> icon-file</li>
+                    <li><i class="icon-time"></i> icon-time</li>
+                    <li><i class="icon-road"></i> icon-road</li>
+                    <li><i class="icon-download-alt"></i> icon-download-alt</li>
+                    <li><i class="icon-download"></i> icon-download</li>
+                    <li><i class="icon-upload"></i> icon-upload</li>
+                    <li><i class="icon-inbox"></i> icon-inbox</li>
+
+                    <li><i class="icon-play-circle"></i> icon-play-circle</li>
+                    <li><i class="icon-repeat"></i> icon-repeat</li>
+                    <li><i class="icon-refresh"></i> icon-refresh</li>
+                    <li><i class="icon-list-alt"></i> icon-list-alt</li>
+                    <li><i class="icon-lock"></i> icon-lock</li>
+                    <li><i class="icon-flag"></i> icon-flag</li>
+                    <li><i class="icon-headphones"></i> icon-headphones</li>
+                    <li><i class="icon-volume-off"></i> icon-volume-off</li>
+                    <li><i class="icon-volume-down"></i> icon-volume-down</li>
+                    <li><i class="icon-volume-up"></i> icon-volume-up</li>
+                    <li><i class="icon-qrcode"></i> icon-qrcode</li>
+                    <li><i class="icon-barcode"></i> icon-barcode</li>
+                    <li><i class="icon-tag"></i> icon-tag</li>
+                    <li><i class="icon-tags"></i> icon-tags</li>
+                    <li><i class="icon-book"></i> icon-book</li>
+                    <li><i class="icon-bookmark"></i> icon-bookmark</li>
+                    <li><i class="icon-print"></i> icon-print</li>
+                    <li><i class="icon-camera"></i> icon-camera</li>
+                    <li><i class="icon-font"></i> icon-font</li>
+                    <li><i class="icon-bold"></i> icon-bold</li>
+                    <li><i class="icon-italic"></i> icon-italic</li>
+                    <li><i class="icon-text-height"></i> icon-text-height</li>
+                    <li><i class="icon-text-width"></i> icon-text-width</li>
+                    <li><i class="icon-align-left"></i> icon-align-left</li>
+                    <li><i class="icon-align-center"></i> icon-align-center</li>
+                    <li><i class="icon-align-right"></i> icon-align-right</li>
+                    <li><i class="icon-align-justify"></i> icon-align-justify</li>
+                    <li><i class="icon-list"></i> icon-list</li>
+
+                    <li><i class="icon-indent-left"></i> icon-indent-left</li>
+                    <li><i class="icon-indent-right"></i> icon-indent-right</li>
+                    <li><i class="icon-facetime-video"></i> icon-facetime-video</li>
+                    <li><i class="icon-picture"></i> icon-picture</li>
+                    <li><i class="icon-pencil"></i> icon-pencil</li>
+                    <li><i class="icon-map-marker"></i> icon-map-marker</li>
+                    <li><i class="icon-adjust"></i> icon-adjust</li>
+                    <li><i class="icon-tint"></i> icon-tint</li>
+                    <li><i class="icon-edit"></i> icon-edit</li>
+                    <li><i class="icon-share"></i> icon-share</li>
+                    <li><i class="icon-check"></i> icon-check</li>
+                    <li><i class="icon-move"></i> icon-move</li>
+                    <li><i class="icon-step-backward"></i> icon-step-backward</li>
+                    <li><i class="icon-fast-backward"></i> icon-fast-backward</li>
+                    <li><i class="icon-backward"></i> icon-backward</li>
+                    <li><i class="icon-play"></i> icon-play</li>
+                    <li><i class="icon-pause"></i> icon-pause</li>
+                    <li><i class="icon-stop"></i> icon-stop</li>
+                    <li><i class="icon-forward"></i> icon-forward</li>
+                    <li><i class="icon-fast-forward"></i> icon-fast-forward</li>
+                    <li><i class="icon-step-forward"></i> icon-step-forward</li>
+                    <li><i class="icon-eject"></i> icon-eject</li>
+                    <li><i class="icon-chevron-left"></i> icon-chevron-left</li>
+                    <li><i class="icon-chevron-right"></i> icon-chevron-right</li>
+                    <li><i class="icon-plus-sign"></i> icon-plus-sign</li>
+                    <li><i class="icon-minus-sign"></i> icon-minus-sign</li>
+                    <li><i class="icon-remove-sign"></i> icon-remove-sign</li>
+                    <li><i class="icon-ok-sign"></i> icon-ok-sign</li>
+
+                    <li><i class="icon-question-sign"></i> icon-question-sign</li>
+                    <li><i class="icon-info-sign"></i> icon-info-sign</li>
+                    <li><i class="icon-screenshot"></i> icon-screenshot</li>
+                    <li><i class="icon-remove-circle"></i> icon-remove-circle</li>
+                    <li><i class="icon-ok-circle"></i> icon-ok-circle</li>
+                    <li><i class="icon-ban-circle"></i> icon-ban-circle</li>
+                    <li><i class="icon-arrow-left"></i> icon-arrow-left</li>
+                    <li><i class="icon-arrow-right"></i> icon-arrow-right</li>
+                    <li><i class="icon-arrow-up"></i> icon-arrow-up</li>
+                    <li><i class="icon-arrow-down"></i> icon-arrow-down</li>
+                    <li><i class="icon-share-alt"></i> icon-share-alt</li>
+                    <li><i class="icon-resize-full"></i> icon-resize-full</li>
+                    <li><i class="icon-resize-small"></i> icon-resize-small</li>
+                    <li><i class="icon-plus"></i> icon-plus</li>
+                    <li><i class="icon-minus"></i> icon-minus</li>
+                    <li><i class="icon-asterisk"></i> icon-asterisk</li>
+                    <li><i class="icon-exclamation-sign"></i> icon-exclamation-sign</li>
+                    <li><i class="icon-gift"></i> icon-gift</li>
+                    <li><i class="icon-leaf"></i> icon-leaf</li>
+                    <li><i class="icon-fire"></i> icon-fire</li>
+                    <li><i class="icon-eye-open"></i> icon-eye-open</li>
+                    <li><i class="icon-eye-close"></i> icon-eye-close</li>
+                    <li><i class="icon-warning-sign"></i> icon-warning-sign</li>
+                    <li><i class="icon-plane"></i> icon-plane</li>
+                    <li><i class="icon-calendar"></i> icon-calendar</li>
+                    <li><i class="icon-random"></i> icon-random</li>
+                    <li><i class="icon-comment"></i> icon-comment</li>
+                    <li><i class="icon-magnet"></i> icon-magnet</li>
+
+                    <li><i class="icon-chevron-up"></i> icon-chevron-up</li>
+                    <li><i class="icon-chevron-down"></i> icon-chevron-down</li>
+                    <li><i class="icon-retweet"></i> icon-retweet</li>
+                    <li><i class="icon-shopping-cart"></i> icon-shopping-cart</li>
+                    <li><i class="icon-folder-close"></i> icon-folder-close</li>
+                    <li><i class="icon-folder-open"></i> icon-folder-open</li>
+                    <li><i class="icon-resize-vertical"></i> icon-resize-vertical</li>
+                    <li><i class="icon-resize-horizontal"></i> icon-resize-horizontal</li>
+                    <li><i class="icon-hdd"></i> icon-hdd</li>
+                    <li><i class="icon-bullhorn"></i> icon-bullhorn</li>
+                    <li><i class="icon-bell"></i> icon-bell</li>
+                    <li><i class="icon-certificate"></i> icon-certificate</li>
+                    <li><i class="icon-thumbs-up"></i> icon-thumbs-up</li>
+                    <li><i class="icon-thumbs-down"></i> icon-thumbs-down</li>
+                    <li><i class="icon-hand-right"></i> icon-hand-right</li>
+                    <li><i class="icon-hand-left"></i> icon-hand-left</li>
+                    <li><i class="icon-hand-up"></i> icon-hand-up</li>
+                    <li><i class="icon-hand-down"></i> icon-hand-down</li>
+                    <li><i class="icon-circle-arrow-right"></i> icon-circle-arrow-right</li>
+                    <li><i class="icon-circle-arrow-left"></i> icon-circle-arrow-left</li>
+                    <li><i class="icon-circle-arrow-up"></i> icon-circle-arrow-up</li>
+                    <li><i class="icon-circle-arrow-down"></i> icon-circle-arrow-down</li>
+                    <li><i class="icon-globe"></i> icon-globe</li>
+                    <li><i class="icon-wrench"></i> icon-wrench</li>
+                    <li><i class="icon-tasks"></i> icon-tasks</li>
+                    <li><i class="icon-filter"></i> icon-filter</li>
+                    <li><i class="icon-briefcase"></i> icon-briefcase</li>
+                    <li><i class="icon-fullscreen"></i> icon-fullscreen</li>
+                  </ul>
+                  
+                  <hr class="bs-docs-separator">
+                  <h2>How to use</h2>
+                  <p>All icons require an <code>&lt;i&gt;</code> tag with a unique class, prefixed with <code>icon-</code>. To use, place the following code just about anywhere:</p>
+        <pre class="prettyprint linenums">
+        &lt;i class="icon-search"&gt;&lt;/i&gt;
+        </pre>
+                  <p>There are also styles available for inverted (white) icons, made ready with one extra class. We will specifically enforce this class on hover and active states for nav and dropdown links.</p>
+        <pre class="prettyprint linenums">
+        &lt;i class="icon-search icon-white"&gt;&lt;/i&gt;
+        </pre>
+                  <p>
+                    <span class="label label-info">Heads up!</span>
+                    When using beside strings of text, as in buttons or nav links, be sure to leave a space after the <code>&lt;i&gt;</code> tag for proper spacing.
+                  </p>
+              </div><!--/Glyphs-->
+            </div>
+          </div>
+        </div><!--/span12 -->
+      </div><!--/row-->
+
+      <div class="row">
+        <div class="span12">
+          <footer>&copy; Minitheory</footer>
+        </span>
+      </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/prettify.js"></script>
+    <script src="js/main.js"></script>
+    
+  </body>
+</html>
