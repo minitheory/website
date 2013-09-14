@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=1024">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/screen.css">
+
+        <!--[if lte IE 6]>
+            <link rel="stylesheet" type="text/css" href="css/bootstrap-ie6.min.css">
+            <link rel="stylesheet" type="text/css" href="css/ie-cs.css">
+        <![endif]-->
+
+        <!--[if IE]>
+            <link rel="stylesheet" href="css/ie.css">
+        <![endif]-->
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body class="upcoming-page">
+        <div id="wrapper">
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+        <div id="body">
+        <header>
+            <div class="navbar navbar-inverse navbar-fixed-top" id="top-nav">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="index.html"><img src="img/logo.gif" alt="Foshan Food Market, your trusted online market"/></a>
+                        <ul class="nav pull-right" id="sub-nav">
+                            <li class="language english dropdown"><a href="#" lass="dropdown-toggle" data-toggle="dropdown">English<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="english"><a href="#">English</a></li>
+                                    <li class="chinese-simplified"><a href="#">简体中文</a></li>
+                                    <li class="chinese-traditional"><a href="#">繁體中文</a></li>
+                                </ul>
+                            </li>
+                            <li class="phone"><img src="img/ico-phone.gif"/>400-830-1230</li>
+                            <li><a href="#">How it works</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li class="dropdown user"><a href="account.html" class="dropdown-toggle" data-toggle="dropdown"><!--<img src="img/portrait.jpg"/>-->Profile<b class="caret"></b></a></a>
+                                <ul class="dropdown-menu">
+                                    <li class="subsection">
+                                        <strong class="title">Logged in as</strong>
+                                        <span class="account-name">Jack Ma</span>
+                                        <span class="email">hello@jackma.com</span>
+                                    </li>
+                                    <li class="subsection">
+                                        <strong class="title">Balance</strong>
+                                        <span class="balance">$965,192.35<b>USD</b></span>
+                                    </li>
+                                    <li><a href="account.html">My Account</a></li>
+                                    <li><a href="account.html#settings">Settings</a></li>
+                                    <li><a href="#">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar" id="main-nav">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <ul class="nav">
+                            <li class="home"><a href="index.html">Home</a></li>
+                            <li class="auctions"><a href="auctions.html">Auctions</a></li>
+                            <li class="active upcoming"><a href="upcoming.html">Upcoming</a></li>
+                            <li class="history"><a href="history.html">Price History</a></li>
+                            <li class="account"><a href="account.html">My Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <h1>Upcoming Auctions</h1>
+            <div class="row">
+                <div class="span3 menu-col filter-col">
+                    <form class="search-term">
+                        <input type="text" placeholder="Search a product" />
+                        <button type="submit" href="#" class="search"></button>
+                        <div class="top-search">
+                            <strong class="title">Top Searches</strong>
+                            <ul>
+                                <li><a href="#">Australian Abalone</a></li>
+                                <li><a href="#">Boston Lobster</a></li>
+                                <li><a href="#">Thai Rice</a></li>
+                                <li><a href="#">King Crab</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                    <div class="food-type">
+                        <h3 class="title">Food Type</h3>
+                        <ul class="list">
+                            <li class="active"><a href="#" class="all">All</a> <span>(12,312)</span></li>
+                            <li class="inner"><a href="#" class="seafood">Seafood</a> <span>(1,312)</span></li>
+                            <li class="inner"><a href="#" class="grains">Grains</a> <span>(9,312)</span></li>
+                            <li class="inner"><a href="#" class="liquor">Liquor</a> <span>(412)</span></li>
+                        </ul>
+                    </div>
+                    <div class="auction-type">
+                        <h3 class="title">Auction Type</h3>
+                        <ul class="list">
+                            <li class="">
+                                <label class="checkbox" for="call-auction">
+                                    <input type="checkbox" class="checkbox" id="call-auction" name="auction-type" value="call-auction" checked>Call Auction</label>
+                            </li>
+                            <li class="">
+                                <label class="checkbox" for="limit-order">
+                                    <input type="checkbox" class="checkbox" id="limit-order" name="auction-type" value="limit-order" checked>Limit Order</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="span13 table-col">
+                    <table class="table table-striped main-table" id="table-upcoming">
+                        <colgroup>
+                            <col class="col1">
+                            <col class="col2">
+                            <col class="col3">
+                            <col class="col4">
+                            <col class="col5">
+                            <col class="col6">
+                            <col class="col7">
+                            <col class="col8">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="item-name">Product Name</th>
+                                <th>Specification (per box)</th>
+                                <th>Starting Bid</th>
+                                <th>Maximum Bid</th>
+                                <th>Quantity</th>
+                                <th>Trade Unit</th>
+                                <th class="sortable">Auction<br/>Type<b class="caret"></b></th>
+                                <th class="sortable">Start<br/>Time<b class="caret"></b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div> <!-- /container -->
+        </div>
+        <footer>
+            <div class="container">
+                <ul class="nav">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Membrship Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li class="last"><a href="#">Contact Us</a></li>
+                </ul>
+                <p>Guangdong Foshan | ICP registration certificate number: GD ICP 11093226 No. -1 &copy; 2013 Copyright and All rights reserved</p>
+            </div>
+        </footer>
+
+        </div>
+
+        <div id="item-panel-holder">
+            <div id="item-panel" class="container">
+                <div class="row">
+                    <div class="span10 info-panel">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#item-description">Description</a></li>
+                            <li><a href="#item-history">History</a></li>
+                            <li><a href="#item-bids">Current Bids</a></li>
+                            <li><a href="#item-cost">Cost Breakdown</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="item-description">
+                                <figure>
+                                    <img id="selected-image" src=""/>
+                                </figure>
+                                <div class="text">
+                                    <h4><b class="selected-name"></b></h4>
+                                    <dl>
+                                        <dt>Customs Code:</dt>
+                                        <dd><b class="selected-customsCode"></b></dd>
+                                        <dt>Country of Origin:</dt>
+                                        <dd><b class="selected-country"></b></dd>
+                                        <dt>Supplier:</dt>
+                                        <dd><b class="selected-supplier"></b></dd>
+                                    </dl>
+                                    <p><b class="selected-desc"></b></p>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="item-history">
+                                <div class="history-meta">
+                                    <div class="legend">
+                                        <b class="average"></b><span>Average Price</span>
+                                        <b class="type"></b><span>Seafood</span>
+                                    </div>
+                                    <article class="high">
+                                        <span>High</span>
+                                        <strong>$85.23</strong>
+                                    </article>
+                                    <article class="low">
+                                        <span>Low</span>
+                                        <strong>$25.23</strong>
+                                    </article>
+                                    <article class="current">
+                                        <span>Current</span>
+                                        <strong>$30.23</strong>
+                                    </article>
+                                    <select>
+                                        <option>1 Week</option>
+                                        <option>1 Month</option>
+                                        <option>1 Quarter</option>
+                                        <option>1 Year</option>
+                                    </select>
+                                </div> 
+                            </div>
+                            <div class="tab-pane" id="item-bids">
+                                <ol>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                </ol>
+                                <ol start="7" class="last">
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                </ol>
+                            </div>
+                            <div class="tab-pane" id="item-cost">
+                                <div class="exchange">Reference Exchange Rate: <b id="the-exchangerate">6.123</b></div>
+                                <table class="table">
+                                    <colgroup>
+                                        <col class="col1">
+                                        <col class="col2">
+                                        <col class="col3">
+                                        <col class="col4">
+                                        <col class="col5">
+                                        <col class="col6">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th class="description" colspan="3">Description</th>
+                                            <th class="quantity">Quantity</th>
+                                            <th class="bid">Bid Price</th>
+                                            <th class="amount">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="3"><b class="selected-name"></b><span class="specification"><b class="selected-boxWeight"></b><b class="selected-boxWeightUnit"></b> <b class="selected-spec"></b></span></td>
+                                            <td class="quantity"><b id="the-quantity">-</b></td>
+                                            <td class="bid"><b id="the-bid">-</b> <span>USD</span></td>
+                                            <td class="amount"><b id="the-amount">-</b> <span>USD</span></td>
+                                        </tr>
+                                        <tr class="more">
+                                            <td class="spacer" colspan="3"></td>
+                                            <td colspan="2">Tariff</td>
+                                            <td class="amount"><b class="selected-tax"></b> <span>USD</span></td>
+                                        </tr>
+                                        <tr class="more">
+                                            <td class="spacer" colspan="3"></td>
+                                            <td colspan="2">VAT</td>
+                                            <td class="amount"><b class="selected-tax"></b> <span>USD</span></td>
+                                        </tr>
+                                        <tr class="more">
+                                            <td class="spacer" colspan="3"></td>
+                                            <td colspan="2">Service Charge</td>
+                                            <td class="amount"><b class="selected-tax"></b> <span>USD</span></td>
+                                        </tr>
+                                        <tr class="more total">
+                                            <td><strong>Balance</strong></td>
+                                            <td class="amount balance"><b id="the-balance">50,000.00</b> <span>USD</span></td>
+                                            <td class="spacer"></td>
+                                            <td colspan="2">Total Due</td>
+                                            <td class="amount"><b id="the-total">-</b> <span>USD</span></td>
+                                        </tr>
+                                        <tr class="more total alt">
+                                            <td class="spacer"></td>
+                                            <td class="amount"><b id="the-balancermb">340,000.00</b> <span>RMB</span></td>
+                                            <td class="spacer"></td>
+                                            <td colspan="2" class="spacer"></td>
+                                            <td class="amount"><b id="the-totalrmb">-</b> <span>RMB</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6 bidding-panel">
+                        <dl class="primary">
+                            <dt>Starting Bid:</dt>
+                            <dd>$<b class="selected-startBid"></b>/kg</dd>
+                            <dt>Quantity:</dt>
+                            <dd><b class="selected-quantity"></b> boxes</dd>
+                        </dl>
+                        <dl class="secondary">
+                            <dt>Max Bid:</dt>
+                            <dd>$<b class="selected-maxBid"></b>/kg</dd>
+                        </dl>
+                        <div class="not-available">
+                            <dl class="time">
+                                <dt>Bidding Starts:</dt>
+                                <dd><b class="selected-time"></b></dd>
+                            </dl>
+                            <span class="disabled-reason">This item is not yet available for bidding</span>
+                            <button class="btn disabled">Not Yet Available</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span16">
+                        <div class="notification">
+                            <span>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum.</span>
+                            <a href="#" class="close">Close</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="close" id="close-panel">Close</a>
+            </div>
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+        <script src="js/db.js"></script>
+        <script>
+            var upcomingItems= itemsdb.filter(function(el){
+                return el.status == 'upcoming'
+            });
+            for (i=0;i<upcomingItems.length;i++){
+                var theItem =upcomingItems[i];
+                $('#table-upcoming tbody').append('<tr data-id="'+theItem.id+'" data-food="'+theItem.foodType+'" data-auction="'+theItem.auctionType.replace(' ','-')+'"><td class="item-name">'+theItem.name+'</td><td>'+theItem.boxWeight + theItem.boxWeightUnit+' '+theItem.spec+'</td><td>$'+theItem.startBid+'/kg</td><td>$'+theItem.maxBid+'/kg</td><td>'+theItem.quantity+'</td><td>'+theItem.tradeUnit+' boxes</td><td>'+theItem.auctionType+'</td><td>'+theItem.time+'</td></tr>');
+            }
+        </script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/jquery.validate.min.js"></script>
+        <!--[if lte IE 6]>
+            <script src="js/bootstrap-ie.js"></script>
+        <![endif]-->
+        <script src="js/vendor/jquery.tablesorter.min.js"></script>
+        <script src="js/parsers/parser-date-two-digit-year.js"></script>
+        <script src="js/parsers/relative-time.js"></script>
+        <script src="js/vendor/jquery.numeric.js"></script>
+        <script src="js/vendor/bootstrap-datepicker.js"></script>
+        
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

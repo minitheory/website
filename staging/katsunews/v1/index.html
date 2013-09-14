@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Katsu News</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script>
+
+    $(document).ready(function(){
+    	$('.view-gallery, .play-video').click(function(){
+    		$(this).toggleClass('active');
+    		if ($(this).is('.view-gallery')){
+    			$(this).parents('.post').find('.gallery').slideToggle();
+                return false; //return false does not apply to .play-video as it will block bootstrap js
+    		}
+            else if($(this).is('.play-video')) {
+                $(this).parents('.post').find('.video').slideToggle();
+                return false;
+            }
+    	});
+    	$('.hide-gallery').click(function(){
+    		$(this).parents('.gallery').slideUp().siblings('.header').find('.view-gallery').toggleClass('active');
+    		return false;
+    	});
+    	$('.post').hover(function(){
+    		if ($(document).width() > 979) {$(this).find('.share').show();}
+    	}, function(){
+    		$(this).find('.share').hide();
+    	});
+
+        // Posts filtering
+        $('#categories1 a, #categories2 a').click(function(){
+            tag = $(this).attr('rel');
+            if (tag == 'all'){
+                $('.post').slideDown();
+            }
+            else {
+                $('.post').each(function(){
+                    cat = $(this).attr('data-tag');
+                    if(cat.indexOf(tag) >= 0){
+                        $(this).slideDown();
+                    }
+                    else {
+                        $(this).slideUp();
+                    }
+                })
+
+                //$('.post').not('[data-tag="'+tag+'"]').slideUp();
+                //$('.post[data-tag="'+tag+'"]').slideDown();    
+            }
+            
+        });
+
+        // Date selector
+        $('#date-form').hide();
+        $('#date-form input').attr('value', $('#date').html());
+        $('#date').click(function(){
+            currentDate = $(this).html();
+            $(this).hide().next().show().find('input').attr('value',currentDate);
+        });
+        $('#date-form a').click(function(){
+            $(this).parent().hide().prev().show();
+        });
+
+    	$(window).scroll(function(){
+		  // get the height of #wrap
+		  var h = $('body').height();
+		  var y = $(window).scrollTop();
+		  if( y > (150)  ){
+		   $(".back").fadeIn("fast");
+		  } else {
+		   $('.back').fadeOut('fast');
+		  }
+		});
+
+    	$('.gallery').hide(); //hide the galleries at the start
+    	$('.back-holder').css('width',$('.container').width());
+    	$(window).resize(function(){
+    		$('.back-holder').css('width',$('.container').width());
+    	});
+    
+	});
+
+    //date validation
+    //var baseFeedTime = 1347419706000;
+    var pgrdad='September 11, 2012, 11:15 PM'; //current date and time in this format
+    var m2_ead='120911/h2315'; //current date and time in this format
+    var curr_yy=12; //current year
+    var min_mod=5; // minute modifier - rounds down the minute input to the nearest 5 minute interval
+    var lb_ead='120911'; //current date in this format
+
+    var m1_sad_d='September 12, 2005'; //earliest record date in this format
+    var m1_sad='050912/h0000';  //earliest record date in this format
+    var m2_sad=m1_sad;
+    var arrt='http://http://www.katsunews.com/';
+    function godate(d) {
+    d = d.replace(/a\.?m/i, ' am');
+    d = d.replace(/p\.?m/i, ' pm');
+    var pa=new Array(/^jan/i,/^feb/i,/^mar/i,/^apr/i,/^may/i,/^jun/i,/^jul/i,/^aug/i,/^sep/i,/^oct/i,/^nov/i,/^dec/i);
+    var fa = d.split(/[^a-zA-Z0-9]+/g);
+    for(var i=0;i<12;i++) {
+        if (fa[0].match(pa[i])) {
+            var ip1 = i+1;
+            fa[0] = ip1+'';
+        }
+    }
+    var em='Sorry, no archives exist prior to '+m1_sad_d;
+    var tpyy;
+    if (fa.length==2) {
+    fa[2] = curr_yy+'';
+    tpyy=((100+curr_yy-1)+'').substring(1,3);
+    }
+    if (fa[2] > 1900) {
+    if (fa[2] < 2001) {
+    alert(em);
+    return;
+    }
+    fa[2] = fa[2].substring(2,4);
+    } else if (fa[2] > 80) {
+    alert(em);
+    return;
+    }
+    var h,m;
+    if (fa[3]=='0' || fa[3]=='00' || (fa[0]>=1 && fa[3]<=23)) {
+    h=parseInt(fa[3],10);
+    m=parseInt(fa[4],10);
+    if (!m) { m=0; }
+    } else {
+    h=20;
+    m=0;
+    }
+    m=m-m%min_mod;
+    if ((fa[4]=='pm'||fa[5]=='pm') && h<12) {
+    h+=12;
+    } else if ((fa[4]=='am'||fa[5]=='am') && h==12) {
+    h=0;
+    }
+    fa[3]=h+'';
+    fa[4]=m+'';
+    if (
+    (fa[0]>=1 && fa[0]<=12) &&
+    (fa[1]>=1 && fa[1]<=31) &&
+    (fa[2]>=1 && fa[2]<=curr_yy) &&
+    (fa[4]>=0 && fa[4]<=59)
+    ) {
+    for(var i=0;i<fa.length;i++) {
+    var f=fa[i];
+    if (f.length < 2) {
+    fa[i]='0'+f;
+    }
+    }
+    var m2_ad=fa[2]+fa[0]+fa[1]+'/h'+fa[3]+fa[4];
+    var m1_ad;
+    if ((m2_ad > m2_ead) && tpyy) {
+    m2_ad=tpyy+m2_ad.substr(2,m2_ad.length);
+    m1_ad=tpyy;
+    } else {
+    m1_ad=fa[2];
+    }
+    m1_ad=m1_ad+'/'+fa[0]+'/'+fa[1]+'/';
+    if (m2_ad > m2_ead) {
+    alert("Sorry, no page exists yet for that date");
+    } else if (m2_ad < m1_sad) {
+    alert(em);
+    } else if (m2_ad < m2_sad) {
+    location = arrt+m1_ad;
+    } else {
+    location = arrt+m2_ad;
+    }
+    } else {
+    alert('Please use this format:  '+pgrdad);
+    }
+}
+    </script>
+
+  </head>
+
+  <body>
+  	<!-- twitter script-->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  	<!-- facebook like script -->
+  	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+    <div id="header">
+      	<div class="container">
+    	  	<div class="row">
+    	  		<div class="span12">
+    	  			<a class="brand" href="#">Katsu News</a>
+                    <div class="navbar alt pull-right">
+                        <a class="btn-navbar" href="#" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                    </div>
+    	  		</div>
+    	  	</div>
+    	</div>
+    </div>
+	  	<div class="main-nav">
+		  	<div class="navbar">
+		  		<div class="container">
+			    	<div class="navbar-inner nav-collapse">
+			    		<ul class="nav" id="categories1">
+			    			<li><a href="#" rel="all">すべて <span>All</span></a></li>
+			    			<li><a href="#" rel="anime">アニメ <span>Anime</span></a></li>
+			    			<li><a href="#" rel="jrock">J-ロック <span>J-Rock</span></a></li>
+			    			<li><a href="#" rel="jpop">J-ポップ <span>J-Pop</span></a></li>
+			    			<li><a href="#" rel="idols">アイドル <span>Idols</span></a></li>
+			    		</ul>
+			    		<ul class="nav pull-right social">
+			    			<li class="twitter"><a href="#" target="_blank"><span>Twitter</span></a></li>
+			    			<li class="facebook"><a href="#" target="_blank"><span>Facebook</span></a></li>
+			    			<li class="rss"><a href="#" target="_blank"><span>RSS</span></a></li>
+			    		</ul>
+			    	</div>
+			    </div>
+			</div>
+			<div class="navbar subnav nav-collapse">
+				<div class="container">
+			    	<div class="navbar-inner">
+			    		<span class="title">Hot!</span>
+			    		<ul class="nav" id="categories2">
+			    			<li><a href="#" rel="akb47">AKB47</a></li>
+			    			<li><a href="#" rel="afa2012">AFA 2012</a></li>
+			    			<li><a href="#" rel="wondergirls">Wondergirls</a></li>
+			    			<li><a href="#" rel="wonderfestival">Wonder festival</a></li>
+			    			<li><a href="#" rel="shinjuku">Shinjuku</a></li>
+			    			<li><a href="#" rel="otaku">Otaku</a></li>
+			    			<li><a href="#" rel="nintendo">Nintendo</a></li>
+			    		</ul>
+			    	</div>
+			    </div>
+		    </div>
+		</div>
+	<div class="container">
+	    <div class="row">
+	    	<div class="span8 main"> <!-- left col -->
+	    		<div class="row"> <!-- heading and meta -->
+	    			<div class="span9 header">
+	    				<h2 class="pull-left">Top news</h2>
+	    				<span class="pull-left meta visible-desktop">
+                            <span id="date">September 10, 2012, 6:00 AM</span>
+                            <form id="date-form" action="" method="get" ONSUBMIT="godate(this.date_time_box.value); return false;">
+                                <input type="text" name="date_time_box" value=""/>
+                                <a href="#">Cancel</a>
+                            </form>
+                            <a class="calendar" href="#">Calendar</a>
+                        </span>
+	    				<em class="visible-desktop">click to access archives</em>
+	    			</div>
+	    		</div>
+	    		
+	    		<!-- posts start from here -->	
+    			<div class="post" data-tag="anime otaku"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://andriasang.com" class="source">Andriasang.com</a>
+                        
+                        <span class="timestamp">21 hours ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://andriasang.com/con2n4/site_closing/">Andriasang.com is Closing</a></h3>
+                    </div>
+
+                    <div class="content">
+                    
+                        <p>I've decided to take up a new opportunity that will hopefully keep me really busy, so I will be ceasing daily updates. I may do some database-driven stuff and technology tests (look closely, and you may see the site's backend code base change from PHP... </p>
+                        <p>Composite Score: 620</p>
+                        <p>Hotness: 82.3944517</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="idols"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.tokyohive.com" class="source">tokyohive</a>
+                        
+                            <span class="author">HPriest</span>
+                        
+                        <span class="timestamp">8 hours ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.tokyohive.com/2012/09/sato-takeru-carries-maeda-atsuko-home-after-private-graduation-party/">Sato Takeru carries Maeda Atsuko home after private graduation party</a></h3>
+                    </div>
+
+                    <div class="content">
+                        <div class="img-holder">
+                            <img height="200" width="200" src="http://static.tokyohive.com/wp-content/uploads/2012/09/20120911_shukanbunshun_maeda_003.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                        </div>
+                        <p>On September 11th, the tabloid ‘Shukan Bunshun‘ published an article that shows how actor Sato Takeru had to carry Maeda Atsuko home after obviously having one too many drinks. In the pictures, Maeda can be seen completely drunk, crying her eyes out f... </p>
+                        <p>Composite Score: 211</p>
+                        <p>Hotness: 82.3096302</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="idols"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.jefusion.com" class="source">JEFusion</a>
+                        
+                            <span class="author">GekiDan</span>
+                        
+                        <span class="timestamp">22 hours ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.jefusion.com/2012/09/live-action-monster-hunter-in-works.html">Live Action Monster Hunter in the Works</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://1.bp.blogspot.com/-WBkDfEOcbhU/UE7FMTBHYmI/AAAAAAAAZdg/ULHgseJKf5w/s400/monsterhunter.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>It has been revealed by Resident Evil (Biohazard) films' director, writer, and producer Paul W. S. Anderson, that a live action film adaptation of the Monster Hunter video game franchise is currently in the planning stage.In an article from Cinema Tod... </p>
+                        <p>Composite Score: 135</p>
+                        <p>Hotness: 81.209515</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="idols"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://nendogamer.wordpress.com" class="source">NendoGamer</a>
+                        
+                            <span class="author">nendogamer</span>
+                        
+                        <span class="timestamp">15 hours ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://nendogamer.wordpress.com/2012/09/11/gravity-unable-to-redeem-tekken-tag-tournament-2-dlc-codes/">[GRAVITY] Unable to Redeem Tekken Tag Tournament 2 DLC Codes</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://nendogamer.files.wordpress.com/2012/09/t004.jpg?w=645&h=362"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>There have been issues as of late that gamers unable to redeem their Tekken Tag Tournament 2 DLC Codes. Kindly read further for details. The issue covers the XBL (Xbox Live) and PSN (Playstation Network) / SOE ( Sony Online Entertainment ) wherein if ... </p>
+                        <p>Composite Score: 20</p>
+                        <p>Hotness: 80.60206</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="jrock"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.musicjapanplus.jp" class="source">musicJAPANplus</a>
+                        
+                            <span class="author">info@cooljapan.co.jp (Webmaster)</span>
+                        
+                        <span class="timestamp">1 day ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.musicjapanplus.jp/news/1/17678/j%2Drock%2Devolution%2D2012%2Din%2Djakarta%2Ddetails%2Dfinally%2Dannounced/">-news+- J-Rock Evolution 2012 in Jakarta Details Finally Announced!</a></h3>
+                    </div>
+
+                    <div class="content">
+                    
+                        <p>event / Alice Nine / MUCC On July it has been announced that the event "J-Rock Evolution 2012" will tour several countries in Asia, whereas Singapore and Indonesia were the first to be announced and will be the countries the event is embarking from. N... </p>
+                        <p>Composite Score: 144</p>
+                        <p>Hotness: 80.5843312</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="anime"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://zotaku.com" class="source">zone otaku</a>
+                        
+                            <span class="author">zenical</span>
+                        
+                        <span class="timestamp">15 hours ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://zotaku.com/2012/09/11/18-kurokami-medaka-pvc/">1/8 Kurokami Medaka PVC</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://zotaku.com/wp-content/uploads/2012/09/11091220.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>Home » Figurine 1/8 Kurokami Medaka PVC Max Factory has started preorders of the 1/8 scale figure of Kurokami Medaka PVC from the series Medaka Box. Figure: Kurokami Medaka PVCManufacturer: Max Factory Scale: 1/8 (Approximately 205 mm) Release Date: J... </p>
+                        <p>Composite Score: 7</p>
+                        <p>Hotness: 80.3222193</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="anime"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.crunchyroll.com" class="source">Crunchyroll</a>
+                        
+                        <span class="timestamp">1 day ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.crunchyroll.com/anime-news/2012/09/10/fall-2012-anime-chart-version-20">Fall 2012 Anime Chart Version 2.0!</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://img1.ak.crunchyroll.com/i/spire1/a3d44b5cc7c46ee77bfe34ecc5fced481347314163_full.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>As it's approached, the fall anime season has just gotten more and more impressive. From the violent Btooom! to the return of Gintama and Hayate the Combat Butler to shoujo like Kamisama Kiss, the diversity and potential quality look outstanding.     ... </p>
+                        <p>Composite Score: 162</p>
+                        <p>Hotness: 79.9542425</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="anime"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://wcloudxkumo.com" class="source">Wcloudx (kumo)'s Blog</a>
+                        
+                        <span class="timestamp">15 hours ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://wcloudxkumo.com/2012/09/11/kotobukiyas-new-kirino-reservation-starts/">Kotobukiya’s New Kirino Reservation Starts!!</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://img.photobucket.com/albums/v507/wcloudx/figures/figure2/10199374a10.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>Kotobukiya’s New Kirino Reservation Starts!! This new 1/7 scale figure of “Kousaka Kirino ○○ na Wake ga Nai Ver.” from Ore no Imouto ga Konna ni Kawaii Wake ga Nai, will be available next year in January 2013 by Kotobukiya for 6,800 Yen retail price. ... </p>
+                        <p>Composite Score: 2</p>
+                        <p>Hotness: 79.7781513</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="idols"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://andriasang.com" class="source">Andriasang.com</a>
+                        
+                        <span class="timestamp">1 day ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://andriasang.com/con2n3/monster_hunter_movie/">Resident Evil Retribution Director Says Monster Hunter Flick in Planning</a></h3>
+                    </div>
+
+                    <div class="content">
+                    
+                        <p>Monster Hunter may be the next Capcom property to get the Hollywood treatment, and Resident Evil Retribution producer Paul W.S. Anderson may be involved. In an interview about Retribution, which hits Japanese theaters on September 14, Cinema Today ask... </p>
+                        <p>Composite Score: 133</p>
+                        <p>Hotness: 79.6532125</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="idols"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.tokyohive.com" class="source">tokyohive</a>
+                        
+                            <span class="author">HPriest</span>
+                        
+                        <span class="timestamp">1 day ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.tokyohive.com/2012/09/tony-leung-matsuda-shota-and-maeda-atsuko-to-star-in-kurosawa-kiyoshis-new-movie-1905/">Tony Leung, Matsuda Shota, and Maeda Atsuko to star in Kurosawa Kiyoshi’s new movie ‘1905′</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://static.tokyohive.com/wp-content/uploads/2012/09/20120910_1905_tony-leung_matsuda_maeda_600.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>On September 10th, it was announced that worldwide renowned Chinese actor Tony Leung Chiu Wai is going to star in his first Japanese movie. The movie is titled ‘1905‘ and will be directed by Kurosawa Kiyoshi, who also already made a name for himself a... </p>
+                        <p>Composite Score: 255</p>
+                        <p>Hotness: 79.5365584</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="anime"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://maddalwalker.blogspot.com" class="source">Mada Faith Dale Walker</a>
+                        
+                            <span class="author">
+Ng Yong Yao
+</span>
+                        
+                        <span class="timestamp">15 hours ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://maddalwalker.blogspot.com/2012/09/madas-anime-goods-reports-11-september.html">Mada's Anime Goods Reports 11 September 2012</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://4.bp.blogspot.com/-A_M90h15SlM/UE8PlKAfIsI/AAAAAAAAEmY/EVFWg2ntAcU/s320/80045.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>Been placing Anime Goods with the Figurine Report for some time, but decided to split both up for better preference and peeking.Anime Goods are Normal Stuffs with Anime characters on the item, or some item look the same as those shown in Anime or othe... </p>
+                        <p>Composite Score: 6</p>
+                        <p>Hotness: 79.4771213</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="anime"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://wcloudxkumo.com" class="source">Wcloudx (kumo)'s Blog</a>
+                        
+                        <span class="timestamp">15 hours ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://wcloudxkumo.com/2012/09/11/alters-amane-suzuha-previews/">Alter’s Amane Suzuha Previews</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://img.photobucket.com/albums/v507/wcloudx/figures/figure2/2f860d38.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>Alter’s Amane Suzuha Previews Alter updated their Blog with preview images of their upcoming 1/8 scale figure of “Amane Suzuha” from Steins;Gate ^^ Reservations will open tomorrow. Via Alter’s Blog. Like this: Be the first to like this. This entry was... </p>
+                        <p>Composite Score: 1</p>
+                        <p>Hotness: 79.4771213</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="idols"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://helloprojectxtreme.blogspot.com" class="source">helloprojectXtreme</a>
+                        
+                            <span class="author">etchi</span>
+                        
+                        <span class="timestamp">15 hours ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://helloprojectxtreme.blogspot.com/2012/09/moyoko-sasaki-part-1.html">Moyoko Sasaki part 1&2</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://3.bp.blogspot.com/-pcNC7KirrqA/UE8nC_cHPoI/AAAAAAAAFGE/HE5bOcPjJZo/s640/ima-2012.08-Sasaki.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>image.tv 2012.08 Moyoko Sasaki (Part 01) [image.tv] 2012年08月号 佐々木もよこ Change the World 前編 [26P+1Mov34.1MB] Download – Uploaded image.tv 2012.09 Moyoko Sasaki (Part 02) [image.tv] 2012年09月号 佐々木もよこ Change the World 後篇 [22P+1Mov30.8MB] Download – Uploaded... </p>
+                        <p>Composite Score: 1</p>
+                        <p>Hotness: 79.30103</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="idols"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://tylerraiz.wordpress.com" class="source">J-Everything</a>
+                        
+                            <span class="author">tylerraiz</span>
+                        
+                        <span class="timestamp">13 hours ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://tylerraiz.wordpress.com/2012/09/10/24-hour-television-2012-08-26-part-5-review/">24-hour Television 2012.08.26 Part 5 Review</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://tylerraiz.files.wordpress.com/2012/09/vlcsnap-0000112.jpg?w=300&h=168"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>For details on the 24-hr TV telethon, please refer to the post on Part 1 here. Part 5 began at daybreak on August 26th. Here are the links to Part 2, Part 3, and Part 4. A YYeTs version of the entire telethon is available on D-Addicts, though in seven... </p>
+                        <p>Composite Score: 1</p>
+                        <p>Hotness: 79</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="jpop"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://mikatan.goodsmile.info/en/" class="source">Mikatan's Blog</a>
+                        
+                            <span class="author">gscmikatan</span>
+                        
+                        <span class="timestamp">1 day ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://mikatan.goodsmile.info/en/2012/09/10/yuruyuri%e2%99%aa%e2%99%aa-amusement-club-cafe/">YuruYuri♪♪ Amusement Club Café</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://livedoor.blogimg.jp/gscmikatan/imgs/7/e/7e91b70e.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>I missed lunch, so I really felt like stopping by the GSC Tetsujin Café… …luckily Akihabara is nice and close to the new offices! ヽ(ﾟ∀ﾟ)ﾉ When I arrived it was already closing time, but they let me in anyway! Yay! The Good Smile x Karaoke no Tetsujin ... </p>
+                        <p>Composite Score: 58</p>
+                        <p>Hotness: 78.50515</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="anime"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.animenewsnetwork.com" class="source">Anime News Network</a>
+                        
+                        <span class="timestamp">2 days ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.animenewsnetwork.com/news/2012-09-09/daily-briefs">Daily Briefs</a></h3>
+                    </div>
+
+                    <div class="content">
+                    
+                        <p>• Retailer's Magazine Page Listed Psycho-Pass Staff • From Up on Poppy Hill's English Dub Writers Revealed • Japanese/U.S. Joint Licensing Venture Formed • Sword Art Online Light Novels Have 5.85 Million Copies • Retro Game Master DVDs Delayed 2 Weeks... </p>
+                        <p>Composite Score: 264</p>
+                        <p>Hotness: 78.4216039</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="idols"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.crunchyroll.com" class="source">Crunchyroll</a>
+                        
+                        <span class="timestamp">2 days ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.crunchyroll.com/anime-news/2012/09/09-1/next-moe-hello-kitty-figure-slated-for-december">Return of the Moe Hello Kitty Figure</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://img1.ak.crunchyroll.com/i/spire1/c32f4545b9ca5f44e9276eb6ab646d141347200068_full.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>Back at 2009's summer Comiket, Sanrio presented Together With Hello Kitty, a collection of redesigns of their famous feline by moe artists like Okama, POP (Moetan), and Kuroboshi Kouhaku (Kino's Journey). Having released Okama's kitty attired Iroha Ne... </p>
+                        <p>Composite Score: 255</p>
+                        <p>Hotness: 78.4065402</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="jrock"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.dannychoo.com" class="source">Culture Japan</a>
+                        
+                        <span class="timestamp">2 days ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.dannychoo.com/post/en/26660/Akihabara+Electronics.html">Akihabara Electronics</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://farm9.static.flickr.com/8036/7959296444_558c58b370_o.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>After Japan lost the war in 1945, the many radio technicians and electronic engineers stationed around the world came back home to Japan. At the time, there wasn't many jobs going round and all most of them could do was to make things like electric ri... </p>
+                        <p>Composite Score: 180</p>
+                        <p>Hotness: 78.2552725</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="idols"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.tokyohive.com" class="source">tokyohive</a>
+                        
+                            <span class="author">ustar</span>
+                        
+                        <span class="timestamp">2 days ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.tokyohive.com/2012/09/takajo-aki-and-nakagawa-haruka-make-surprise-guest-appearance-at-jkt48-theater/">Takajo Aki and Nakagawa Haruka make surprise guest appearance at JKT48 Theater</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://static.tokyohive.com/wp-content/uploads/2012/09/20120908_jkt48_takajo_nakagawa1.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>On September 8th, Takajo Aki and Nakagawa Haruka made a surprise guest appearance at JKT48’s first performance at the JKT48 Theater in Jakarta, Indonesia. During the 1st day of AKB48’s 3-day concert at Tokyo Dome, it was announced that Takajo and Naka... </p>
+                        <p>Composite Score: 201</p>
+                        <p>Hotness: 78.10721</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="anime"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.crunchyroll.com" class="source">Crunchyroll</a>
+                        
+                        <span class="timestamp">3 days ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.crunchyroll.com/anime-news/2012/09/08/fairy-tail-manga-author-sketches-gender-swapped-characters">"Fairy Tail" Manga Author Sketches Gender Swapped Characters</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://img1.ak.crunchyroll.com/i/spire4/6e6e2007f0a2b4eb35ddd8a1abaf5e001347153210_full.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>It's been a fun week for Fairy Tail manga author Hiro Mashima on his twitter feed @hiro_mashima. After grabbing the internet's attention with his sketch of Metal Gear Solid's Raiden, he committed to making the weekend a bit sexier which gender swapped... </p>
+                        <p>Composite Score: 850</p>
+                        <p>Hotness: 77.9294189</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="jpop"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.jpopasia.com" class="source">JpopAsia</a>
+                        
+                        <span class="timestamp">2 days ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.jpopasia.com/news/iu-has-a-new-hobby-cooking::12169.html">IU Has A New Hobby: Cooking</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://www.jpopasia.com/i1/news/4/12169-6r2srwo58s.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>IU Has A New Hobby: Cooking general posted by Aysohmay 16 minutes ago   ·   0 comments Due to many variety shows making people cook, IU has picked up cooking as a new hobby.The singer share her new interest on the latest episode of MBC's "Quiz To Chan... </p>
+                        <p>Composite Score: 84</p>
+                        <p>Hotness: 77.9242793</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="anime"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.crunchyroll.com" class="source">Crunchyroll</a>
+                        
+                        <span class="timestamp">3 days ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.crunchyroll.com/anime-news/2012/09/08/japanese-fans-name-the-anime-all-otaku-should-see">Japanese Fans Name the Anime All Otaku Should See</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://img1.ak.crunchyroll.com/i/spire2/8f4ba61fe8bfb0e02161b0556b184bb81347151585_large.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>In a new Biglobe Anime Ranking poll, almost seven thousand fans responded to a question looking for the anime that anyone who likes anime should axiomatically see. Basically, if you're an anime watcher, you should naturally make it a point to see this... </p>
+                        <p>Composite Score: 705</p>
+                        <p>Hotness: 77.8481891</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="games"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.otakustudy.com" class="source">The Otaku's Study</a>
+                        
+                        <span class="timestamp">1 day ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.otakustudy.com/2012/09/hideo-kojima-briefly-showcases-metal-gear-rising-revengeance-through-twitter-feed/">Hideo Kojima Briefly Showcases Metal Gear Rising: Revengeance Through Twitter Feed</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://www.otakustudy.com/wp-content/uploads/2012/09/A2Z9UfpCUAE5s0B-e1347264406819.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>Those who attend the Tokyo Game Show this year will be able to sample a brand new demo of the next Metal Gear game “Metal Gear Rising: Revengeance”. Through his Twitter feed, Hideo Kojima has been posting a number of teaser and preview images – which ... </p>
+                        <p>Composite Score: 4</p>
+                        <p>Hotness: 77.7781513</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="idols"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://aramatheydidnt.livejournal.com" class="source">あらま They Didn't!</a>
+                        
+                            <span class="author">aye_no_jinsei</span>
+                        
+                        <span class="timestamp">3 days ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://aramatheydidnt.livejournal.com/4249720.html">Jin Akanishi might get in trouble for photo his brother uploaded to Twitter</a></h3>
+                    </div>
+
+                    <div class="content">
+                    
+                        <p>... </p>
+                        <p>Composite Score: 515</p>
+                        <p>Hotness: 77.7118072</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="games"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.japanator.com" class="source">Japanator</a>
+                        
+                            <span class="author">Josh Tolentino</span>
+                        
+                        <span class="timestamp">2 days ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.japanator.com/rumor-gravity-rush-s-kat-in-sony-s-smash-brothers-clone-26721.phtml">Rumor: Gravity Rush's Kat in Sony's Smash Brothers clone</a></h3>
+                    </div>
+
+                    <div class="content">
+                    
+                        <p>Back when Sony announced that they were making a clone of Nintendo's Smash Brothers series called PlayStation All-Stars Battle Royale, the first question most folks asked was, "Who the hell's going to be in it?". As new roster announcements come in, t... </p>
+                        <p>Composite Score: 50</p>
+                        <p>Hotness: 77.69897</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="idols"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.tokyohive.com" class="source">tokyohive</a>
+                        
+                            <span class="author">simplymissj</span>
+                        
+                        <span class="timestamp">2 days ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.tokyohive.com/2012/09/ske48s-matsui-rena-cancels-her-handshake-event-for-health-reasons/">SKE48’s Matsui Rena cancels her handshake event for health reasons</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://static.tokyohive.com/wp-content/uploads/2012/09/20120908_Matsui_Rena.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>SKE48’s Matsui Rena cancelled her handshake event on September 8 due to her poor physical condition. Matsui apologized to fans on Google+ with, “It is unfortunate, but I needed to cancel my handshake event due to my poor physical condition. To my fans... </p>
+                        <p>Composite Score: 468</p>
+                        <p>Hotness: 77.6702459</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="idols"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.tokyohive.com" class="source">tokyohive</a>
+                        
+                            <span class="author">HPriest</span>
+                        
+                        <span class="timestamp">2 days ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.tokyohive.com/2012/09/nycs-nakayama-yuma-to-star-in-the-upcoming-late-night-drama-piece/">NYC’s Nakayama Yuma to star in the upcoming late-night drama ‘Piece’</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://static.tokyohive.com/wp-content/uploads/2012/09/20120909_piece_001.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>NYC’s Nakayama Yuma to star in the upcoming late-night drama ‘Piece’ by HPriest on September 9, 2012 at 4:14 am On September 9th, NTV announced that NYC’s Nakayama Yuma is going to star in their upcoming late-night drama ‘Piece‘. The drama is based on... </p>
+                        <p>Composite Score: 456</p>
+                        <p>Hotness: 77.6589648</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="anime"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.jpopasia.com" class="source">JpopAsia</a>
+                        
+                        <span class="timestamp">2 days ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.jpopasia.com/news/new-live-action-xxxholic-tv-series-announced::12154.html">New Live-Action 'xxxHOLiC' TV Series Announced</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://www.jpopasia.com/i1/news/4/12154-wymlj5s8im.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>New Live-Action 'xxxHOLiC' TV Series Announced tv-movies It's been announced that CLAMP's hit manga series xxxHOLiC will be adapted into a live-action TV series. The TV series will be broadcasted on Japan's WOWOW station in early 2013. Model and actre... </p>
+                        <p>Composite Score: 440</p>
+                        <p>Hotness: 77.6434527</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="anime"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://www.animenewsnetwork.com" class="source">Anime News Network</a>
+                        
+                        <span class="timestamp">2 days ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://www.animenewsnetwork.com/news/2012-09-09/solanin-asano-to-end-umibe-no-onna-no-ko-manga">Solanin's Asano to End Umibe no Onna no Ko Manga</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://cdn02.animenewsnetwork.com/thumbnails/max400x400/cms/news/55089/solanin.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>Inio Asano's story of 2 teens exploring their relationship to end in January The 77th volume of Ohta Books' Manga Erotics F magazine revealed on Thursday that manga creator Inio Asano (Solanin) is drawing two more chapters of her Umibe no Onna no Ko (... </p>
+                        <p>Composite Score: 324</p>
+                        <p>Hotness: 77.510545</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- posts start from here -->  
+                <div class="post" data-tag="anime"> <!-- post start -->
+                    <!-- FIRST TYPE OF POST NO EXTRA IMAGES -->
+                    <div class="meta">
+                        <a href="http://tcmanila.tk" class="source">Assorted Explorations</a>
+                        
+                        <span class="timestamp">1 day ago</span>
+                        <div class="share pull-right">
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-url="">Tweet</a>
+                            <div class="fb-like-wrapper">
+                                <div class="fb-like" data-href="http://www.google.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <h3><a href="http://tcmanila.tk/post/31259628793/this-week-in-watchlist-jay-stop-hiding-your-ass">This Week in /Watchlist/: Jay, stop hiding your ass.</a></h3>
+                    </div>
+
+                    <div class="content">
+                    <div class="img-holder">
+                        <img height="200" width="200" src="http://media.tumblr.com/tumblr_ma4dp0QTxM1qgyb1i.jpg"/ class="pull-left"> <!-- THIS IS THE MAIN THUMBNAIL-->
+                    </div>
+                        <p>10th September 2012. It has been a fruitful week for me, as we (referring to the school publication I am working with) got to finish most articles in three days — a new record for us.  Going back to my aniblogging stint, there are some anime that tell... </p>
+                        <p>Composite Score: 3</p>
+                        <p>Hotness: 77.4771213</p>
+                    </div>
+                </div> <!-- post end -->
+
+
+
+                <!-- no more posts -->
+            </div><!-- left col end -->
+
+            <div class="span3 aside visible-desktop"> <!-- right col -->
+                <!-- RIGHT COLUMN-->
+                <div class="header">
+                    <h2>Latest news</h2>
+                </div>
+                <!-- posts start here -->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.animenewsnetwork.com" class="source">Anime News Network</a>
+                        
+                        <span class="timestamp">7 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.animenewsnetwork.com/news/2012-09-11/japan-animation-blu-ray-disc-ranking-september-3-9">Japan's Animation Blu-ray Disc Ranking, September 3-9</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.siliconera.com" class="source">Siliconera</a>
+                        
+                            <span class="author">Ishaan</span>
+                        
+                        <span class="timestamp">7 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.siliconera.com/2012/09/11/accel-world-promo-videos-introduce-duel-avatars-and-the-games-battle-system/">Accel World Promo Videos Introduce Duel Avatars And The Game’s Battle System</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.tokyohive.com" class="source">tokyohive</a>
+                        
+                            <span class="author">Kanki</span>
+                        
+                        <span class="timestamp">7 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.tokyohive.com/2012/09/perfume-releases-full-pv-to-fake-it/">Perfume releases full PV to “FAKE IT”</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.siliconera.com" class="source">Siliconera</a>
+                        
+                            <span class="author">Ishaan</span>
+                        
+                        <span class="timestamp">7 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.siliconera.com/2012/09/11/tekken-tag-tournament-2s-next-dlc-character-tutorial-is-for-kunimitsu/">Tekken Tag Tournament 2′s Next DLC Character Tutorial Is For Kunimitsu</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.japanator.com" class="source">Japanator</a>
+                        
+                            <span class="author">Salvador G-Rodiles</span>
+                        
+                        <span class="timestamp">7 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.japanator.com/gomu-gomu-no-exhibition-oda-s-exhibit-to-sail-to-osaka-26744.phtml">Gomu Gomu no Exhibition: Oda's exhibit to sail to Osaka</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.crunchyroll.com" class="source">Crunchyroll</a>
+                        
+                        <span class="timestamp">7 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.crunchyroll.com/anime-news/2012/09/11/video-throw-down-with-the-code-of-princess-versus-trailer">VIDEO: Throw Down with the "Code of Princess" Versus Trailer</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://aramatheydidnt.livejournal.com" class="source">あらま They Didn't!</a>
+                        
+                            <span class="author">miu_miu</span>
+                        
+                        <span class="timestamp">7 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://aramatheydidnt.livejournal.com/4257540.html">Shinotani Hijiri’s agency cancels his contract</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.siliconera.com" class="source">Siliconera</a>
+                        
+                            <span class="author">Ishaan</span>
+                        
+                        <span class="timestamp">7 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.siliconera.com/2012/09/11/doujin-platformer-eryis-action-hops-onto-pcs-this-week/">Doujin Platformer, Eryi’s Action, Hops Onto PCs This Week</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.otakuusamagazine.com" class="source">Otaku USA Magazine</a>
+                        
+                        <span class="timestamp">8 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.otakuusamagazine.com/SearchAudience/News1/e781acbb-1e97-46be-8b10-49c40aa2e988.aspx">On The Shelf – September 12, 2012</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.otakuusamagazine.com" class="source">Otaku USA Magazine</a>
+                        
+                        <span class="timestamp">8 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.otakuusamagazine.com/SearchAudience/News1/1cbda440-2f38-4efa-bf8e-588549ea1784.aspx">Sneak Peek: WCS and Comiket Cosplay Report!</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://helloprojectxtreme.blogspot.com" class="source">helloprojectXtreme</a>
+                        
+                            <span class="author">Camille Barat</span>
+                        
+                        <span class="timestamp">8 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://helloprojectxtreme.blogspot.com/2012/09/suzuki-airi-young-gangan-premium-dvd.html">Suzuki Airi - Young Gangan Premium DVD Vol.18</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.animenewsnetwork.com" class="source">Anime News Network</a>
+                        
+                        <span class="timestamp">8 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.animenewsnetwork.com/news/2012-09-11/north-american-anime-manga-releases-september-9-15">North American Anime, Manga Releases, September 9-15</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.tokyohive.com" class="source">tokyohive</a>
+                        
+                            <span class="author">HPriest</span>
+                        
+                        <span class="timestamp">8 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.tokyohive.com/2012/09/sato-takeru-carries-maeda-atsuko-home-after-private-graduation-party/">Sato Takeru carries Maeda Atsuko home after private graduation party</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://helloprojectxtreme.blogspot.com" class="source">helloprojectXtreme</a>
+                        
+                            <span class="author">Camille Barat</span>
+                        
+                        <span class="timestamp">8 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://helloprojectxtreme.blogspot.com/2012/09/videos.html">Videos</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.tokyohive.com" class="source">tokyohive</a>
+                        
+                            <span class="author">HPriest</span>
+                        
+                        <span class="timestamp">8 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.tokyohive.com/2012/09/shinotani-hijiris-agency-cancels-his-contract/">Shinotani Hijiri’s agency cancels his contract</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.sankakucomplex.com" class="source">Sankaku Complex</a>
+                        
+                            <span class="author">Artefact</span>
+                        
+                        <span class="timestamp">8 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.sankakucomplex.com/2012/09/12/hikikomori-house-burner-it-was-the-only-way-to-escape/">Hikikomori House Burner: “It Was The Only Way To Escape!”</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.animenewsnetwork.com" class="source">Anime News Network</a>
+                        
+                        <span class="timestamp">8 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.animenewsnetwork.com/news/2012-09-11/chiisana-ojisan-tv-anime-premieres-in-october">Chiisana Ojisan TV Anime to Premiere in October</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.crunchyroll.com" class="source">Crunchyroll</a>
+                        
+                        <span class="timestamp">8 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.crunchyroll.com/anime-news/2012/09/11-1/video-uk-fan-film-makes-a-serious-attempt-at-live-action-dragon-ball-z">VIDEO: UK Fan Film Makes a Serious Attempt at Live-Action "Dragon Ball Z"</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.jpopasia.com" class="source">JpopAsia</a>
+                        
+                        <span class="timestamp">9 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.jpopasia.com/news/raphael-releasing-first-single-in-12-years::12189.html">Raphael Releasing First Single in 12 Years</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+
+
+                <div class="post">
+                    <div class="meta">
+                        <a href="http://www.siliconera.com" class="source">Siliconera</a>
+                        
+                            <span class="author">Ishaan</span>
+                        
+                        <span class="timestamp">9 hours ago</span>
+                        
+                    </div>
+                    <h3><a href="http://www.siliconera.com/2012/09/11/code-of-princess-trailer-shows-4-player-brawls-in-versus-multiplayer-mode/">Code of Princess Trailer Shows 4-Player Brawls In Versus Multiplayer Mode</a></h3>
+                </div>
+                <!-- ITERATE THROUGH THIS-->
+
+	    		<!-- posts end here -->
+	    	</div>
+	    </div>
+	    
+	    <div class="back-holder">
+	    	<a class="back pull-right" href="#">Back to top</a>
+	    </div>
+	
+		
+	</div>
+    
+      <footer>
+      	<div class="container">
+        	<ul>
+        		<li><a href="#">About</a></li>
+        		<li><a href="#">Blog</a></li>
+        	</ul>
+        </div>
+      </footer>
+    </div><!--/.fluid-container-->
+
+  </body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=1024">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/screen.css">
+
+        <!--[if lte IE 6]>
+            <link rel="stylesheet" type="text/css" href="css/bootstrap-ie6.min.css">
+            <link rel="stylesheet" type="text/css" href="css/ie-cs.css">
+        <![endif]-->
+
+        <!--[if IE]>
+            <link rel="stylesheet" href="css/ie.css">
+        <![endif]-->
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body class="auctions-page">
+        <div id="wrapper">
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+        <div id="body">
+        <header>
+            <div class="navbar navbar-inverse navbar-fixed-top" id="top-nav">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="index.html"><img src="img/logo.gif" alt="Foshan Food Market, your trusted online market"/></a>
+                        <form class="navbar-form pull-left" id="search-form" action="auctions-search.html">
+                            <input type="text" class="span2"><button type="submit" class="btn">Search</button>
+                            <div class="popular">
+                                Top Searches:
+                                <ol>
+                                    <li><a href="#">Lobster</a></li>
+                                    <li><a href="#">Crab</a></li>
+                                    <li><a href="#">Rice</a></li>
+                                    <li><a href="#">Abalone</a></li>
+                                </ol>
+                            </div>
+                        </form>
+                        <ul class="nav pull-right" id="sub-nav">
+                            <li class="phone"><img src="img/ico-phone.gif"/>400-830-1230</li>
+                            <li><a href="#">How it works</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li class="dropdown user"><a href="account.html" class="dropdown-toggle" data-toggle="dropdown"><!--<img src="img/portrait.jpg"/>-->Profile<b class="caret"></b></a></a>
+                                <ul class="dropdown-menu">
+                                    <li class="subsection">
+                                        <strong class="title">Logged in as</strong>
+                                        <span class="account-name">Jack Ma</span>
+                                        <span class="email">hello@jackma.com</span>
+                                    </li>
+                                    <li class="subsection">
+                                        <strong class="title">Balance</strong>
+                                        <span class="balance">$965,192.35<b>USD</b></span>
+                                    </li>
+                                    <li><a href="account.html">My Account</a></li>
+                                    <li><a href="account.html#settings">Settings</a></li>
+                                    <li><a href="#">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar" id="main-nav">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <ul class="nav">
+                            <li class="home"><a href="index.html">Home</a></li>
+                            <li class="active auctions"><a href="auctions.html">Auctions</a></li>
+                            <li class="upcoming"><a href="upcoming.html">Upcoming</a></li>
+                            <li class="history"><a href="history.html">Price History</a></li>
+                            <li class="account"><a href="account.html">My Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <h1>Auctions</h1>
+            <div class="row">
+                <div class="span16">
+                    <div class="notification">
+                        <span>Your search for <b>Australia Abalone</b> returned <b>20 results</b></span>
+                        <a href="#" class="close">Close</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span3 menu-col filter-col">
+                    <div class="food-type">
+                        <h3 class="title">Food Type</h3>
+                        <ul class="list">
+                            <li class="active"><a href="#">All</a> <span>(12,312)</span></li>
+                            <li class="inner"><a href="#">Seafood</a> <span>(1,312)</span></li>
+                            <li class="inner"><a href="#">Grains</a> <span>(9,312)</span></li>
+                            <li class="inner"><a href="#">Liquor</a> <span>(412)</span></li>
+                        </ul>
+                    </div>
+                    <div class="auction-type">
+                        <h3 class="title">Auction Type</h3>
+                        <ul class="list">
+                            <li class="">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox" id="food-all" name="auction-type" value="all" checked>Call Auction</label>
+                            </li>
+                            <li class="">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox" id="food-seafood" name="auction-type" value="seafood" checked>Limit Order</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="span13 table-col">
+                    <table class="table table-striped main-table" id="table-auctions">
+                        <colgroup>
+                            <col class="col1">
+                            <col class="col2">
+                            <col class="col3">
+                            <col class="col4">
+                            <col class="col5">
+                            <col class="col6">
+                            <col class="col7">
+                            <col class="col8">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="item-name">Product Name</th>
+                                <th>Specification (per box)</th>
+                                <th>Current<br/>Bid</th>
+                                <th>Maximum<br/>Bid</th>
+                                <th>Quantity</th>
+                                <th>Trade Unit</th>
+                                <th class="sortable">Auction<br/>Type<b class="caret"></b></th>
+                                <th class="sortable">Time<br/>Left<b class="caret"></b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-current="30" data-max="86" data-starting="20" data-quantity="100" data-unit="10" data-time="2:30:25" data-rate="12">
+                                <td class="item-name">Australia Abalone</td>
+                                <td>12kg (Big: 12 - 15 pc)</td>
+                                <td>$30/kg</td>
+                                <td>$86/kg</td>
+                                <td>100 boxes</td>
+                                <td>10 boxes</td>
+                                <td>Call Auction</td>
+                                <td>2h 40m</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">BAustralia Abalone</td>
+                                <td>12kg (Big: 12 - 15 pc)</td>
+                                <td>$30/kg</td>
+                                <td>$86/kg</td>
+                                <td>100 boxes</td>
+                                <td>10 boxes</td>
+                                <td>Call Auction</td>
+                                <td>24h</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">CAustralia Abalone</td>
+                                <td>12kg (Big: 12 - 15 pc)</td>
+                                <td>$30/kg</td>
+                                <td>$86/kg</td>
+                                <td>100 boxes</td>
+                                <td>10 boxes</td>
+                                <td>Call Auction</td>
+                                <td>1d 5h</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">CAustralia Abalone</td>
+                                <td>12kg (Big: 12 - 15 pc)</td>
+                                <td>$30/kg</td>
+                                <td>$86/kg</td>
+                                <td>100 boxes</td>
+                                <td>10 boxes</td>
+                                <td>Limit Order</td>
+                                <td>10m</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">CAustralia Abalone</td>
+                                <td>12kg (Big: 12 - 15 pc)</td>
+                                <td>$30/kg</td>
+                                <td>$86/kg</td>
+                                <td>100 boxes</td>
+                                <td>10 boxes</td>
+                                <td>Limit Order</td>
+                                <td>10m</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">CAustralia Abalone</td>
+                                <td>12kg (Big: 12 - 15 pc)</td>
+                                <td>$30/kg</td>
+                                <td>$86/kg</td>
+                                <td>100 boxes</td>
+                                <td>10 boxes</td>
+                                <td>Limit Order</td>
+                                <td>10m</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">CAustralia Abalone</td>
+                                <td>12kg (Big: 12 - 15 pc)</td>
+                                <td>$30/kg</td>
+                                <td>$86/kg</td>
+                                <td>100 boxes</td>
+                                <td>10 boxes</td>
+                                <td>Call Auction</td>
+                                <td>10m</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">CAustralia Abalone</td>
+                                <td>12kg (Big: 12 - 15 pc)</td>
+                                <td>$30/kg</td>
+                                <td>$86/kg</td>
+                                <td>100 boxes</td>
+                                <td>10 boxes</td>
+                                <td>Call Auction</td>
+                                <td>10m</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">CAustralia Abalone</td>
+                                <td>12kg (Big: 12 - 15 pc)</td>
+                                <td>$30/kg</td>
+                                <td>$86/kg</td>
+                                <td>100 boxes</td>
+                                <td>10 boxes</td>
+                                <td>Limit Order</td>
+                                <td>10m</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">CAustralia Abalone</td>
+                                <td>12kg (Big: 12 - 15 pc)</td>
+                                <td>$30/kg</td>
+                                <td>$86/kg</td>
+                                <td>100 boxes</td>
+                                <td>10 boxes</td>
+                                <td>Call Auction</td>
+                                <td>10m</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">CAustralia Abalone</td>
+                                <td>12kg (Big: 12 - 15 pc)</td>
+                                <td>$30/kg</td>
+                                <td>$86/kg</td>
+                                <td>100 boxes</td>
+                                <td>10 boxes</td>
+                                <td>Limit Order</td>
+                                <td>10m</td>
+                            </tr>
+                            <tr>
+                                <td class="item-name">CAustralia Abalone</td>
+                                <td>12kg (Big: 12 - 15 pc)</td>
+                                <td>$30/kg</td>
+                                <td>$86/kg</td>
+                                <td>100 boxes</td>
+                                <td>10 boxes</td>
+                                <td>Call Auction</td>
+                                <td>10m</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div> <!-- /container -->
+        </div>
+        <footer>
+            <div class="container">
+                <ul class="nav">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Membrship Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li class="last"><a href="#">Contact Us</a></li>
+                </ul>
+                <p>Guangdong Foshan | ICP registration certificate number: GD ICP 11093226 No. -1 &copy; 2013 Copyright and All rights reserved</p>
+            </div>
+        </footer>
+
+        </div>
+        <div id="item-panel-holder">
+            <div id="item-panel" class="container">
+                <div class="row">
+                    <div class="span10 info-panel">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#item-description">Description</a></li>
+                            <li><a href="#item-history">History</a></li>
+                            <li><a href="#item-bids">Current Bids</a></li>
+                            <li><a href="#item-cost">Cost Breakdown</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="item-description">
+                                <img src="img/lobster2.jpg"/>
+                                <div class="text">
+                                    <h4>Australian Abalone</h4>
+                                    <dl>
+                                        <dt>Customs Code:</dt>
+                                        <dd>198273987123</dd>
+                                        <dt>Country of Origin:</dt>
+                                        <dd>Australia</dd>
+                                        <dt>Supplier:</dt>
+                                        <dd>Guotong Int'l Food Co. Ltd.</dd>
+                                    </dl>
+                                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="item-history">
+                                History
+                            </div>
+                            <div class="tab-pane" id="item-bids">
+                                <ol>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                </ol>
+                                <ol start="7" class="last">
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                    <li><span class="price">12/kg</span>20 boxes<span class="time">05/13/13 8:40am</span></li>
+                                </ol>
+                            </div>
+                            <div class="tab-pane" id="item-cost">
+                                <div class="exchange">Reference Exchange Rate: <b id="the-exchangerate">6.123</b></div>
+                                <table class="table">
+                                    <colgroup>
+                                        <col class="col1">
+                                        <col class="col2">
+                                        <col class="col3">
+                                        <col class="col4">
+                                        <col class="col5">
+                                        <col class="col6">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th class="description" colspan="3">Description</th>
+                                            <th class="quantity">Quantity</th>
+                                            <th class="bid">Bid Price</th>
+                                            <th class="amount">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="3"><b id="the-item">Australian Abalone</b><span class="specification"><b id="the-spec">12kg (Big: 12-15 pc)</b></span></td>
+                                            <td class="quantity"><b id="the-quantity">-</b></td>
+                                            <td class="bid"><b id="the-bid">-</b> <span>USD</span></td>
+                                            <td class="amount"><b id="the-amount">-</b> <span>USD</span></td>
+                                        </tr>
+                                        <tr class="more">
+                                            <td class="spacer" colspan="3"></td>
+                                            <td colspan="2">Tariff</td>
+                                            <td class="amount"><b id="the-tarrif">62.12</b> <span>USD</span></td>
+                                        </tr>
+                                        <tr class="more">
+                                            <td class="spacer" colspan="3"></td>
+                                            <td colspan="2">VAT</td>
+                                            <td class="amount"><b id="the-vat">10.00</b> <span>USD</span></td>
+                                        </tr>
+                                        <tr class="more">
+                                            <td class="spacer" colspan="3"></td>
+                                            <td colspan="2">Service Charge</td>
+                                            <td class="amount"><b id="the-servicecharge">5.00</b> <span>USD</span></td>
+                                        </tr>
+                                        <tr class="more total">
+                                            <td><strong>Balance</strong></td>
+                                            <td class="amount balance"><b id="the-balance">50,000.00</b> <span>USD</span></td>
+                                            <td class="spacer"></td>
+                                            <td colspan="2">Total Due</td>
+                                            <td class="amount"><b id="the-total">-</b> <span>USD</span></td>
+                                        </tr>
+                                        <tr class="more total alt">
+                                            <td class="spacer"></td>
+                                            <td class="amount">(<b id="the-balancermb">340,000.00</b> <span>RMB</span>)</td>
+                                            <td class="spacer"></td>
+                                            <td colspan="2" class="spacer"></td>
+                                            <td class="amount">(<b id="the-totalrmb">-</b> <span>RMB</span>)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6 bidding-panel">
+                        <dl class="primary">
+                            <dt>Current Bid:</dt>
+                            <dd>$<b id="this-current"></b>/kg</dd>
+                            <dt>Starting Bid:</dt>
+                            <dd>$<b id="this-starting"></b>/kg</dd>
+                        </dl>
+                        <dl class="secondary">
+                            <dt>Max Bid:</dt>
+                            <dd>$<b id="this-max"></b>/kg</dd>
+                            <dt>Quantity:</dt>
+                            <dd><b id="this-quantity"></b> boxes</dd>
+                        </dl>
+                        <form class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label" for-"input-bid">Bid Price:</label>
+                                <div class="controls">
+                                    <input class="text" type="text" id="input-bid" maxlength="6"/> USD/kg
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for-"input-quantity">Quantity:</label>
+                                <div class="controls">
+                                    <input class="text" type="text" id="input-quantity" maxlength="6"/> x 10 boxes
+                                </div>
+                            </div>
+                            <dl class="time">
+                                <dt class="time">Time Left:</dt>
+                                <dd class="time"><b id="this-time">&nbsp;</b></dd>
+                            </dl>    
+                            <button type="submit" class="btn">Place a bid</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span16">
+                        <div class="notification">
+                            <span>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum.</span>
+                            <a href="#" class="close">Close</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="close" id="close-panel">Close</a>
+            </div>
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <!--[if lte IE 6]>
+            <script src="js/bootstrap-ie.js"></script>
+        <![endif]-->
+        <script src="js/vendor/jquery.tablesorter.min.js"></script>
+        <script src="js/parsers/relative-time.js"></script>
+        <script src="js/vendor/jquery.numeric.js"></script>
+        <script src="js/vendor/bootstrap-datepicker.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/vendor/respond.min.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

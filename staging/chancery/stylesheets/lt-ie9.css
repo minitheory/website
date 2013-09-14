@@ -1,0 +1,18 @@
+.lt-ie9 .top-bar ul .name a {height:100px;}
+.lt-ie9 .top-bar ul .name a img {vertical-align: middle;display:inline-block;margin-top: 12px}
+.lt-ie9 .top-bar .main-nav li {margin:0 5px;}
+.lt-ie9 .top-bar ul li a {padding:13px 5px 5px;text-transform: uppercase;line-height: 1;font-weight:400;height:auto;color:#91724c;}
+.lt-ie9 .top-bar .main-nav li.active, .lt-ie9 .top-bar .main-nav li:hover {border-top:3px solid #333;}
+.lt-ie9 .top-bar .main-nav li.active a{color:#e9dcc2;padding-top:10px;}
+.lt-ie9 .top-bar .main-nav li:hover a {color:#e9dcc2;padding-top: 10px;text-decoration: none}
+.lt-ie9 .top-bar ul li.has-dropdown {padding-right:0 }
+.lt-ie9 .dropdown {padding:0;}
+.lt-ie9 .top-bar .dropdown li {margin:0;padding: 0 0 5px;}
+.lt-ie9 .top-bar .dropdown li:hover{border-top: none}
+.lt-ie9 form .select-holder {overflow: hidden}
+.lt-ie9 form .select-holder select {width:227px;height:40px;padding-bottom:12px;padding-top: 10px;}
+.lt-ie9 form .textbox {padding-top: 10px}
+.lt-ie9 .profile .practice-areas {display:none;left:100%;min-height: 103px}
+.lt-ie9 .profile.odd .practice-areas {right:100%;left:auto;}
+.lt-ie9 .profile:hover .practice-areas {display:block;}
+.lt-ie9 footer ul li.last {border-right:none;}

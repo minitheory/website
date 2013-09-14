@@ -1,0 +1,44 @@
+/* Header */
+#top-nav .navbar-inner,  {
+	width: 660px !important;
+	float: none !important;
+	clear: none;
+	margin: 0;
+	padding: 0;
+	display: inline;
+	zoom: 1;
+}
+
+ul#sub-nav, ul#sub-nav * {
+	float: none !important;
+	display: inline;
+	zoom: 1;
+}
+
+/* Body */
+
+#delivery-bill, #delivery-bill header, #delivery-bill .title {
+	margin: 0;
+	padding-left: 0;
+	float: none !important;
+}
+
+.row { /* controls width of the shipping no, etc div */
+	width: 670px !important;
+	float: none !important;
+	display: inline-block;
+	margin: 0 !important;
+	clear: both;
+}
+
+.span6 {
+	float: none !important;
+	margin: 0 0 40px 0 !important;
+}
+
+table {
+	width: 620px !important;
+	float: none !important;
+}
+
+

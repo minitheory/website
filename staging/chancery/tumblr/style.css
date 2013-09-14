@@ -1,0 +1,96 @@
+body {background:url("images/bg-grey.gif");padding:0; font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif}
+p {font-size: 13px}
+ul li {list-style: none}
+.wrapper {width:960px; margin:0 auto;}
+
+/* header */
+#header {height:90px;box-shadow:0 3px 6px rgba(0,0,0,0.07);background: #fff;}
+#header .logo {float:left;margin-top: 20px;}
+#search-form {float:right;margin-top: 22px}
+#search-form .textfield {height:40px;border:1px solid #eee;width:220px;border-right:none;vertical-align:top;font-size: 16px;padding: 0 10px 0 20px;}
+#search-form .submit {height:40px;width:40px;border: 1px solid #eee;border-left:none;background: url("images/ico-search.gif") no-repeat center transparent;cursor: pointer;}
+
+/* sidebar */
+#sidebar {width:260px;background: #101010;float:left;margin-top: 5px;}
+.description {color:#777;text-align: center;padding:20px;line-height: 1.2}
+.links {background: url("images/dotted.png") repeat-x top;padding-top: 1px;}
+.links li {text-align: center;background: url("images/dotted.png") repeat-x bottom;padding-bottom:1px;}
+.links li a {font-size: 14px;text-transform: uppercase;color:#777;text-decoration: none;font-weight: 600;padding:17px 0;display: block;}
+.links li a:hover {background: #1f1f1f;color:#fff;}
+.social {text-align: center;padding: 20px 0}
+.social li {display: inline-block;margin: 0 7px}
+.social li a {text-indent: -9999px;width:36px;height:35px;display: block;background: url("images/ico-facebook.gif") no-repeat}
+.social li.twitter a {background-image: url("images/ico-twitter.gif")}
+.social li.googleplus a {background-image: url("images/ico-googleplus.gif")}
+.social li.flickr a {background-image: url("images/ico-flickr.gif")}
+.social li a:hover {background-image:url("images/ico-facebook-hover.gif");}
+.social li.twitter a:hover {background-image: url("images/ico-twitter-hover.gif");}
+.social li.googleplus a:hover {background-image: url("images/ico-googleplus-hover.gif");}
+.social li.flickr a:hover {background-image: url("images/ico-flickr-hover.gif");}
+
+/* main */
+.main {margin-top:35px;}
+#posts {overflow: hidden;float:right;width:685px;padding:5px 0;}
+.post {background: #fff;box-shadow: 0 0 3px 2px rgba(0,0,0,0.07);width:675px;margin: 0 auto 30px;}
+.post .content {padding:30px;}
+.post a {color:#535353;}
+.post .meta {font-size: 12px;color:#bbb;overflow: hidden;padding: 20px; background: url("images/dotted2.png") #f8f8f8 repeat-x top;}
+.post .meta a {text-decoration: none;color:#bbb;float:left;padding-left: 25px;margin-right:20px;height:16px;line-height: 16px}
+.post .meta a:hover {color:#666;font-weight: 600}
+.post .meta .likes {background: url("images/ico-likes.png") no-repeat center left;}
+.post .meta .permalink {background: url("images/ico-permalink.gif") no-repeat center left}
+.post .meta .timestamp {background: url("images/ico-timestamp.gif") no-repeat center left;float:right;padding-left:25px;height:16px;line-height: 16px}
+.post h3 {margin-bottom: 25px;}
+.post h3 a {font-size: 40px;text-decoration: none;color:#111;}
+
+.post p, .post ul, .post blockquote {color:#838383;margin:0 2em 20px;line-height: 1.4;font-size: 13px}
+.post p {margin: 0 0 20px;}
+.post li {list-style: disc;line-height: 1.4}
+.post p a, .post li a {font-weight: 600}
+.post blockquote {font-family: "Chaparral Pro", "Lucida Bright", serif;font-style: italic;font-size: 16px}
+
+
+/* post types */
+.quote .content{background: url("images/blockquote.gif") #fff no-repeat 95% bottom;padding-bottom: 10px;margin-bottom: 20px;line-height:1.2}
+.quote p {font-size: 28px;font-family: "Chaparral Pro", "Lucida Bright", serif;font-style: italic;color:#666;font-weight: 300;line-height: 1.2}
+.quote .source {font-weight: 700;font-size: 14px}
+
+.photo .post-photo {width:100%;display: block}
+.caption p, .caption h1 {margin:15px 25px;}
+
+.video-holder {position: relative;height: 0;padding-bottom: 56.25%;overflow: hidden;}
+.video-holder iframe, .video-holder object, .video-holder embed {
+	position: absolute;top: 0;left: 0;width: 100%;height: 100%
+}
+
+.audio-holder {padding:30px;}
+.audio-info {font-size: 13px;margin-top: 20px}
+
+.post .conversation {margin: 0}
+.conversation li{list-style: none;padding: 10px;}
+.conversation li strong {font-weight: 600;color:#666;}
+.conversation li.chat_line.user1 {background: #f4f4f4}
+
+.post.link a.link {background: url("images/ico-link-arrow.png") no-repeat right center #f8f8f8;display: block;text-decoration: none;padding:15px 10px;border:1px solid #eee;}
+.post.link a.link:hover {background-color: #f0f0f0;border-color:#ddd;}
+
+/* notes */
+ol.notes {background: url("images/dotted2.png") repeat-x top}
+ol.notes li {padding:15px 25px;font-size:12px;color:#bababa;font-weight:600;border-bottom: 1px dotted #ddd}
+ol.notes li a {color:#535353;text-decoration: none}
+ol.notes li a img.avatar {display:none;}
+ol.notes li.like {background:url("images/ico-likes.png") no-repeat 97% center;}
+ol.notes li.reblog {background:url("images/ico-reblog.png") no-repeat 97% center;}
+
+/* footer */
+#footer {clear: both;}
+.pagination-holder {width:675px;float:right;overflow: hidden;margin:0 5px 30px 0;}
+.pagination {border:1px solid #ddd;background: #fff;text-decoration: none;font-size: 11px;color:#bdbdbd; text-transform: uppercase;font-weight: 700; letter-spacing: 3px;padding: 11px 15px 11px}
+.pagination.prev {background: url('images/ico-arrow-prev.gif') no-repeat center left #fff;float: left;padding-left: 30px;}
+.pagination.next {background: url('images/ico-arrow-next.gif') no-repeat center right #fff;float: right;padding-right: 30px;}
+#footer nav {padding:20px 0 30px;clear: both;background: url("images/dotted2.png") repeat-x top}
+#footer nav ul {text-align: center;}
+#footer nav ul li { list-style:none; display:inline-block; border-right:2px solid #b1b1b1;line-height:1;padding:0 5px; }
+#footer nav ul li:last-child {border:none;}
+#footer nav ul li a {font-size:11px;color:#777;font-weight:700;text-transform:uppercase;padding: 0 5px;text-decoration: none}
+#footer nav ul li a:hover {color:#333;}

@@ -1,0 +1,1064 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0 {
+    position:absolute;
+    left:20px;
+    top:22px;
+    width:324px;
+    height:23px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u1_normal {
+    background-image: url('../Task_Flows_files/u1_normal.png');
+}
+
+.u1_container {
+    position:absolute;
+    left:20px;
+    top:85px;
+    width:112px;
+    height:60px;
+}
+
+#u1_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:118px;
+    height:66px;
+}
+
+.u2 {
+    position:absolute;
+    left:10px;
+    top:15px;
+    width:92px;
+    height:30px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u3_normal {
+    background-image: url('../Task_Flows_files/u3_normal.png');
+}
+
+.u3_container {
+    position:absolute;
+    left:370px;
+    top:85px;
+    width:113px;
+    height:60px;
+}
+
+#u3_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:119px;
+    height:66px;
+}
+
+.u4 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:109px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u5_normal {
+    background-image: url('../Task_Flows_files/u5_normal.png');
+}
+
+.u5_container {
+    position:absolute;
+    left:611px;
+    top:85px;
+    width:181px;
+    height:60px;
+}
+
+#u5_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:187px;
+    height:66px;
+}
+
+.u6 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:177px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u7c0 {
+    background-image: url('../Task_Flows_files/u7c0.png');
+}
+
+.u7c0 {
+    position:absolute;
+    left:692px;
+    top:44px;
+    width:20px;
+    height:45px;
+}
+
+.u7c1 {
+    background-image: url('../Task_Flows_files/u7c1.png');
+}
+
+.u7c1 {
+    position:absolute;
+    left:416px;
+    top:44px;
+    width:296px;
+    height:20px;
+}
+
+.u7c2 {
+    background-image: url('../Task_Flows_files/u7c2.png');
+}
+
+.u7c2 {
+    position:absolute;
+    left:416px;
+    top:44px;
+    width:20px;
+    height:45px;
+}
+
+.u8 {
+    position:absolute;
+    left:-188px;
+    top:-38px;
+    width:100px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u9c0 {
+    background-image: url('../Task_Flows_files/u9c0.png');
+}
+
+.u9c0 {
+    position:absolute;
+    left:479px;
+    top:105px;
+    width:142px;
+    height:20px;
+}
+
+.u10 {
+    position:absolute;
+    left:14px;
+    top:-15px;
+    width:100px;
+    height:30px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u11c0 {
+    background-image: url('../Task_Flows_files/u11c0.png');
+}
+
+.u11c0 {
+    position:absolute;
+    left:128px;
+    top:105px;
+    width:90px;
+    height:20px;
+}
+
+.u12 {
+    position:absolute;
+    left:-12px;
+    top:-8px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u13_normal {
+    background-image: url('../Task_Flows_files/u13_normal.png');
+}
+
+.u13_container {
+    position:absolute;
+    left:208px;
+    top:85px;
+    width:112px;
+    height:60px;
+}
+
+#u13_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:118px;
+    height:66px;
+}
+
+.u14 {
+    position:absolute;
+    left:10px;
+    top:22px;
+    width:92px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u15c0 {
+    background-image: url('../Task_Flows_files/u15c0.png');
+}
+
+.u15c0 {
+    position:absolute;
+    left:316px;
+    top:105px;
+    width:64px;
+    height:20px;
+}
+
+.u16 {
+    position:absolute;
+    left:-25px;
+    top:-8px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u17c0 {
+    background-image: url('../Task_Flows_files/u17c0.png');
+}
+
+.u17c0 {
+    position:absolute;
+    left:692px;
+    top:141px;
+    width:20px;
+    height:70px;
+}
+
+.u18 {
+    position:absolute;
+    left:-50px;
+    top:20px;
+    width:100px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u19_normal {
+    background-image: url('../Task_Flows_files/u19_normal.png');
+}
+
+.u19_container {
+    position:absolute;
+    left:652px;
+    top:201px;
+    width:100px;
+    height:60px;
+}
+
+#u19_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:66px;
+}
+
+.u20 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:96px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u21_normal {
+    background-image: url('../Task_Flows_files/u21_normal.png');
+}
+
+.u21_container {
+    position:absolute;
+    left:652px;
+    top:298px;
+    width:100px;
+    height:60px;
+}
+
+#u21_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:66px;
+}
+
+.u22 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:96px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u23c0 {
+    background-image: url('../Task_Flows_files/u23c0.png');
+}
+
+.u23c0 {
+    position:absolute;
+    left:543px;
+    top:318px;
+    width:113px;
+    height:20px;
+}
+
+.u24 {
+    position:absolute;
+    left:-100px;
+    top:-8px;
+    width:100px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u25_normal {
+    background-image: url('../Task_Flows_files/u25_normal.png');
+}
+
+.u25_container {
+    position:absolute;
+    left:335px;
+    top:292px;
+    width:218px;
+    height:73px;
+}
+
+#u25_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:224px;
+    height:79px;
+}
+
+.u26 {
+    position:absolute;
+    left:10px;
+    top:14px;
+    width:198px;
+    height:45px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u27c0 {
+    background-image: url('../Task_Flows_files/u27c0.png');
+}
+
+.u27c0 {
+    position:absolute;
+    left:692px;
+    top:257px;
+    width:20px;
+    height:51px;
+}
+
+.u28 {
+    position:absolute;
+    left:-50px;
+    top:10px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u29_normal {
+    background-image: url('../Task_Flows_files/u29_normal.png');
+}
+
+.u29_container {
+    position:absolute;
+    left:592px;
+    top:419px;
+    width:221px;
+    height:82px;
+}
+
+#u29_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:227px;
+    height:88px;
+}
+
+.u30 {
+    position:absolute;
+    left:10px;
+    top:18px;
+    width:201px;
+    height:45px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u31c0 {
+    background-image: url('../Task_Flows_files/u31c0.png');
+}
+
+.u31c0 {
+    position:absolute;
+    left:692px;
+    top:354px;
+    width:20px;
+    height:75px;
+}
+
+.u32 {
+    position:absolute;
+    left:-50px;
+    top:23px;
+    width:100px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u33 {
+    position:absolute;
+    left:20px;
+    top:634px;
+    width:324px;
+    height:23px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u34_normal {
+    background-image: url('../Task_Flows_files/u34_normal.png');
+}
+
+.u34_container {
+    position:absolute;
+    left:335px;
+    top:384px;
+    width:219px;
+    height:143px;
+}
+
+#u34_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:225px;
+    height:149px;
+}
+
+.u35 {
+    position:absolute;
+    left:10px;
+    top:8px;
+    width:199px;
+    height:126px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u36_normal {
+    background-image: url('../Task_Flows_files/u36_normal.png');
+}
+
+.u36_container {
+    position:absolute;
+    left:20px;
+    top:695px;
+    width:126px;
+    height:67px;
+}
+
+#u36_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:132px;
+    height:73px;
+}
+
+.u37 {
+    position:absolute;
+    left:10px;
+    top:18px;
+    width:106px;
+    height:30px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u38_normal {
+    background-image: url('../Task_Flows_files/u38_normal.png');
+}
+
+.u38_container {
+    position:absolute;
+    left:208px;
+    top:700px;
+    width:129px;
+    height:56px;
+}
+
+#u38_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:135px;
+    height:62px;
+}
+
+.u39 {
+    position:absolute;
+    left:10px;
+    top:20px;
+    width:109px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u40_normal {
+    background-image: url('../Task_Flows_files/u40_normal.png');
+}
+
+.u40_container {
+    position:absolute;
+    left:188px;
+    top:766px;
+    width:173px;
+    height:100px;
+}
+
+#u40_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:179px;
+    height:106px;
+}
+
+.u41 {
+    position:absolute;
+    left:10px;
+    top:14px;
+    width:153px;
+    height:72px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u42_normal {
+    background-image: url('../Task_Flows_files/u42_normal.png');
+}
+
+.u42_container {
+    position:absolute;
+    left:402px;
+    top:700px;
+    width:197px;
+    height:56px;
+}
+
+#u42_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:203px;
+    height:62px;
+}
+
+.u43 {
+    position:absolute;
+    left:10px;
+    top:13px;
+    width:177px;
+    height:30px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u44_normal {
+    background-image: url('../Task_Flows_files/u44_normal.png');
+}
+
+.u44_container {
+    position:absolute;
+    left:641px;
+    top:700px;
+    width:131px;
+    height:56px;
+}
+
+#u44_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:137px;
+    height:62px;
+}
+
+.u45 {
+    position:absolute;
+    left:10px;
+    top:20px;
+    width:111px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u46c0 {
+    background-image: url('../Task_Flows_files/u46c0.png');
+}
+
+.u46c0 {
+    position:absolute;
+    left:142px;
+    top:718px;
+    width:76px;
+    height:20px;
+}
+
+.u47 {
+    position:absolute;
+    left:-19px;
+    top:-8px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u48c0 {
+    background-image: url('../Task_Flows_files/u48c0.png');
+}
+
+.u48c0 {
+    position:absolute;
+    left:333px;
+    top:718px;
+    width:79px;
+    height:20px;
+}
+
+.u49 {
+    position:absolute;
+    left:-18px;
+    top:-8px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u50c0 {
+    background-image: url('../Task_Flows_files/u50c0.png');
+}
+
+.u50c0 {
+    position:absolute;
+    left:596px;
+    top:718px;
+    width:20px;
+    height:15px;
+}
+
+.u50c1 {
+    background-image: url('../Task_Flows_files/u50c1.png');
+}
+
+.u50c1 {
+    position:absolute;
+    left:596px;
+    top:718px;
+    width:49px;
+    height:20px;
+}
+
+.u51 {
+    position:absolute;
+    left:-33px;
+    top:-9px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u52_normal {
+    background-image: url('../Task_Flows_files/u52_normal.png');
+}
+
+.u52_container {
+    position:absolute;
+    left:641px;
+    top:940px;
+    width:131px;
+    height:56px;
+}
+
+#u52_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:137px;
+    height:62px;
+}
+
+.u53 {
+    position:absolute;
+    left:10px;
+    top:13px;
+    width:111px;
+    height:30px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u54c0 {
+    background-image: url('../Task_Flows_files/u54c0.png');
+}
+
+.u54c0 {
+    position:absolute;
+    left:696px;
+    top:862px;
+    width:20px;
+    height:88px;
+}
+
+.u55 {
+    position:absolute;
+    left:-50px;
+    top:30px;
+    width:100px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u56_normal {
+    background-image: url('../Task_Flows_files/u56_normal.png');
+}
+
+.u56_container {
+    position:absolute;
+    left:413px;
+    top:766px;
+    width:174px;
+    height:121px;
+}
+
+#u56_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:180px;
+    height:127px;
+}
+
+.u57 {
+    position:absolute;
+    left:10px;
+    top:16px;
+    width:154px;
+    height:90px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u58_normal {
+    background-image: url('../Task_Flows_files/u44_normal.png');
+}
+
+.u58_container {
+    position:absolute;
+    left:641px;
+    top:810px;
+    width:131px;
+    height:56px;
+}
+
+#u58_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:137px;
+    height:62px;
+}
+
+.u59 {
+    position:absolute;
+    left:10px;
+    top:13px;
+    width:111px;
+    height:30px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u60c0 {
+    background-image: url('../Task_Flows_files/u60c0.png');
+}
+
+.u60c0 {
+    position:absolute;
+    left:696px;
+    top:752px;
+    width:20px;
+    height:68px;
+}
+
+.u61 {
+    position:absolute;
+    left:-50px;
+    top:19px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u62_normal {
+    background-image: url('../Task_Flows_files/u62_normal.png');
+}
+
+.u62_container {
+    position:absolute;
+    left:652px;
+    top:522px;
+    width:100px;
+    height:60px;
+}
+
+#u62_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:66px;
+}
+
+.u63 {
+    position:absolute;
+    left:2px;
+    top:15px;
+    width:96px;
+    height:30px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u64c0 {
+    background-image: url('../Task_Flows_files/u64c0.png');
+}
+
+.u64c0 {
+    position:absolute;
+    left:692px;
+    top:497px;
+    width:20px;
+    height:35px;
+}
+
+.u65 {
+    position:absolute;
+    left:-50px;
+    top:2px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+

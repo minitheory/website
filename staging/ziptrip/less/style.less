@@ -1,0 +1,414 @@
+/* ===================================================================
+Import Bootstrap LESS and Site Specific LESS
+=================================================================== */
+@import 'bootstrap.less'; /* Compiled in Codekit - referenced here as a Framework */
+@import '../../design/less/ziptrip/ui_kit/ui_kit.less'; /* Your site specific LESS variables - these override BS defaults  */
+
+
+/* ===================================================================
+Custom variables and mixins
+=================================================================== */
+// Custom variables
+.border { border:1px solid #d6d6d6}
+
+// Mixins
+.border-radius(@radius: 4px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+/* ===================================================================
+The Real CSS
+=================================================================== */
+
+.rating {color:#FFAF1F}
+form {margin-bottom: 20px}
+.main{
+	.form-control:focus{border-width: 2px;box-shadow: none;padding: 5px 11px;}
+	.has-success .form-control, .has-success .form-control:focus {border-color:#85D545;}
+	.has-error .form-control, .has-error .form-control:focus{border-color:#FF9B9B}
+	.dropdown-menu>li>a {font-size: 16px}
+	.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {background: #F4F4F4;color:@text-dark;}
+	.alert .close {font-size: 28px;opacity: 0.5}
+	.popover{box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+		.popover-title {border-bottom: 0;font-weight: bold;padding-bottom:0;font-size: 16px;}
+		.popover-content {color:@text-dark;font-size: 16px;}
+	}
+}
+// Jumbotron
+
+.deal-search {background:url("../img/banner.jpg") no-repeat center #68DEE5;height:209px;padding-top: 5px;margin-bottom: 0;position: relative;
+	>.container {text-align: center;padding-left: 283px;
+		&:after {content:"";display: block;border:solid;border-color:#68DEE5 transparent transparent;border-width:20px 30px 0;height:0;width:0;position: absolute;bottom:-20px;right: 50%;margin-right: -175px}
+	}
+	h1 {font-size: 24px;line-height: 48px}
+	.input {color:#fff;cursor: pointer;display: inline-block;line-height: 38px;
+		&:hover {border-bottom: 4px solid #fff;}
+	}
+	.text {background: transparent;border:none;outline: none;border-bottom: 4px solid #fff;text-transform: uppercase;color:#fff;font-weight: bold;letter-spacing: 3px;line-height: 38px;padding: 0;text-align: center;
+		&[data-type="destination"] {width:250px}
+		&[data-type="days"] {width:25px}
+		&[data-type="from-date"] {width:130px}
+		&[data-type="to-date"] {width:130px}
+	}
+	.track {width:159px}
+	.btn{margin: 0 10px}
+}
+
+// info box
+.thumb {width:27px;float:left;text-align: center;
+	img {max-width: 100%;display: block;}
+}
+
+.full{overflow: hidden;padding: 10px;
+	.thumb{float: left;margin-right: 5px;width: auto}
+	p{line-height: 1.2}
+}
+.flight { font-size: 14px;
+	p {margin: 0;}
+	.info {font-size: 12px; overflow: hidden;
+		.alt {color:@text-light}
+		strong {font-size: 14px;color:@text-dark;display: block;}
+	}
+
+	&.full{
+		.info {float:left;width:135px;margin-right: 5px;
+				span {display: block;color:@text-light;font-size: 14px}
+			}
+			.schedule {width:333px;float:left;
+				.time{text-align: center;color:@text-dark;
+					&.takeoff,&.land {float:left}
+					strong {display: block;margin-top: 2px}
+				}
+				.route {float:left;width:165px;font-size: 12px;text-align: center;color:@text-light;padding:1px 10px;
+						i {width:100%;height:2px;background:#ddd;display: block;margin-top: 8px;margin-bottom: -10px;}
+						b{.border-radius(10px);background: #DDDDDD;padding:5px 5px 3px;display: inline-block;line-height: 1;
+							&.origin {float: left;}
+							&.destination {float: right;}
+						}
+						.duration {display: block;margin-top: 4px}
+
+
+				}
+			}
+			.price {color:@text-light;font-weight: bold;float: right;line-height: 40px}
+	}
+}
+.hotel{font-size: 14px;
+	p {margin: 0;}
+	strong {font-size: 14px;color:@text-dark;display: block;}
+	.rating {font-size: 12px;margin-right: 1em}
+
+	&.full{
+		strong {font-size: 16px;margin-right: 5px;display: inline;}
+			p {color:@text-light;line-height: 1.5;
+				strong {color:@text-light;font-size: 14px;}
+			}
+			.rating {font-size:16px}
+	}
+}
+
+// Trip
+.trip-title {color:#363636; text-transform: uppercase;
+	span {font-size: 16px;display: block;text-indent: 0.5em}
+}
+.trip-spec {font-weight: bold;
+	img {margin:-3px 10px 0 7px;}
+}
+.trip-travellers { font-weight: bold;
+	img {width: 24px;height:24px}
+}
+.price-box {background:#FFFAF0;border:1px solid #FFD487;.border-radius;text-align: right;font-size: 12px;padding:8px;.border-radius;
+	.title {display: block;font-size: 16px;font-weight: bold;color:@text-dark;border-bottom: 1px solid #d6d6d6;margin: -8px -8px 8px;padding: 0 8px;line-height: 30px}
+	.price {font-weight: bold; color:@text-dark;font-size:24px;
+		em {font-style:normal;display: block;font-weight: normal;color:@text-light}
+	}
+	.old-price {float:left;text-decoration:line-through;color:@text-light}
+	.discount{float:left;background: #85D545;font-weight: bold;width:30px;height:30px;.border-radius;color:#fff;text-align: center;line-height: 1;padding: 4px 0;clear: left;margin-top: 5px}
+	.price {font-size: 24px;line-height: 1;
+		em {font-size: 12px;line-height: 8px}
+	}
+	.savings {color:#85D545}
+	.down {display: block;font-size: 14px;color:@text-light}
+}
+
+
+// Panel
+.panel{
+	&.panel-default{border:1px solid #FFD587;}
+	.panel-heading {background: #FFD587;padding:0;}
+	.panel-title {height: 50px;line-height: 50px;color:#B57B0E;padding-left: 50px;}
+	.panel-body {font-size: 18px}
+	.box {overflow: hidden;margin-bottom: 15px;
+		&:last-child{margin-bottom: 0}
+	}
+	.full{
+		&.flight {padding-left: 25px;}
+		&.depart {background: url("../img/sprite.png") -14px -95px no-repeat;}
+		&.return {background: url("../img/sprite.png") -14px -145px no-repeat;}
+	}
+
+	&.panel-default{
+		.box {border:1px solid #D6D6D6;.border-radius;padding: 8px;box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+			&.empty{border:1px dashed #CACACA;background: #f4f4f4;margin: auto;padding: 20px;.border-radius;text-align: center;box-shadow: none;
+				p {font-size: 16px;color:#898989;font-weight: bold;margin-bottom: 15px;}
+				&:last-child{border:1px dashed #CACACA}
+			}
+		}
+		.holder {width:200px;float: left;position: relative;height:100px;
+			&:first-child {margin-right: 10px;}
+		}
+		.price-box {width:160px;float: left;text-align: center;}
+		.notification {background: #E24747;border:1px solid #960000;.border-radius;font-size: 14px;color:#fff;padding:1px 8px;float: left;margin-left: 37px;}
+		.trip-spec, .trip-travellers {position: absolute;bottom: 5px}
+		.price-history {width:310px;float: right;color:@text-light;font-size: 14px;
+			.graph {width:311px;height:75px;background: #ccc;display: block;}
+		}
+		.promo { color:#fff;font-size: 18px; text-transform: uppercase;
+			strong {position: absolute;}
+			.title {font-size: 12px;top:8px;left:10px;}
+			.price {top:8px;right:10px;}
+			.destination {bottom:5px;left:10px;}
+		}
+	}
+
+	&.booked-trips{  
+		.panel-heading {background: url("../img/sprite.png") #FFD587 0 -450px no-repeat;}
+		header {overflow: hidden;}
+		.box {border:none;border-bottom: 1px solid #FFD587;margin: 0 -15px 15px;padding: 0 15px;.border-radius(0);box-shadow: none;
+			&:last-child{border-bottom: 0;margin-bottom: 0}
+		}
+		.trip-title {float:left}
+		.price-box, .trip-travellers, .trip-spec {float: right;margin-left: 10px;position: static;}
+		.flight{float: left;width:538px;padding-right: 0;}
+		.hotel {float: right;width:370px}
+		.price-box {border:none;background: transparent;padding:0;margin-left: 50px;width: auto}
+		.empty p{ margin-top:20px;
+			&:after{content:'';background: url("../img/arrow.png") no-repeat;width:37px;height:41px;position: absolute;margin: 10px 0 0 15px;}
+		}
+	}
+
+	&.must-go .panel-heading {background: url("../img/sprite.png") #FFD587 0 -500px no-repeat;}
+
+	&.wishlist .panel-heading {background: url("../img/sprite.png") #FFD587 0 -550px no-repeat;}
+}
+
+
+
+
+// Main Upper
+.upper {background:#fff;padding: 40px 0;
+	> .container {position: relative;;padding-left: 0;
+		&:after {content:"";display: block;border:solid;border-color:#fff transparent transparent;border-width:20px 30px 0;height:0;width:0;position: absolute;bottom:-60px;right: 50%;margin-right: -175px}
+	}
+}
+
+// Sidebar
+.sidebar {width:275px;.border-radius(8px); border:4px solid rgba(0,0,0,0.05);box-sizing:content-box; position: fixed;top:200px;
+	
+	.panel-heading {
+		.panel-title{ padding-left: 0; color:#363636;
+			a{background:url("../img/sprite.png") 100% -200px no-repeat; 
+				&.collapsed {background-position: 100% -250px;}
+			}
+		} 
+		a{height:50px;display: block;line-height: 50px;padding-left: 50px;
+			&:hover {text-decoration: none}
+		}
+	}
+	.panel-body{font-size: 14px}
+	.panel-default {.border-radius(0);border-width: 0 1px 1px;
+		> .panel-heading+.panel-collapse .panel-body {border:none;padding: 0}
+	}
+	.panel-group .panel+.panel {margin-top: 0; }
+
+	.flight{
+		background: url("../img/sprite.png") 94% -106px no-repeat;margin-bottom: 10px;
+		&.return {background-position: 94% -156px}
+	}
+	.thumb{margin:5px 8px 0 0;}
+
+	.best {	.border-radius(4px 4px 0 0);border-bottom:none;
+		.best-fixed h1{text-align: center;letter-spacing: 0;margin: 5px 0}
+		.panel-heading {
+			.panel-title {background: url("../img/sprite.png") 0 -300px no-repeat;}
+
+		}
+		#best-holder {
+			.panel-body {padding-top: 0}
+			.why-like{border-top:1px solid #FFD587;padding-top: 15px;
+				ul {padding-left: 0}
+				li {list-style: none;background: url("../img/sprite.png") -15px -416px no-repeat;padding-left: 30px;margin:3px 0}
+			}
+			.recommended {
+				.border-radius;
+				.trip {padding: 5px 5px 0;border:1px solid #FFD587;.border-radius (4px 4px 0 0);border-bottom: none}
+				.flight {background-position: 102% -106px;
+					&.return {background-position: 102% -156px;}
+				}
+				.btn-group{
+					width:100%;overflow: hidden;margin-top: 2px;
+					.btn {width:50%;margin-top: -4px;padding:6px 6px 0;height:44px;
+						&.price{border-right: 1px solid #07949C;margin-right: 1px}
+					}
+				}
+			}
+		}
+	}
+
+
+	.favourites{ .border-radius(0 0 4px 4px);
+		.panel-heading {background: #FFEAC3;.border-radius(0);
+			.panel-title {background: url("../img/sprite.png") 0 -350px no-repeat;}
+		}
+		#favourites-holder .panel-heading {padding: 0;background: #fff;margin-bottom: 2px;}
+		#favourites-holder .panel-collapse.collapsing {width: 100%}
+		.panel-default{border:none}
+		.favourite-single{border-bottom:1px solid #FFD587;
+			.panel-title {color:@text-dark; font-weight: bold;
+				a{padding:0 40px 0 10px;display: block;background: url("../img/sprite.png") #fff 102% 0 no-repeat;
+					&.collapsed {background-position:102% -50px}
+					&:hover{text-decoration: none;}
+				}
+				.price {float: right;line-height: 24px;padding-top: 12px;}
+				em {font-size: 10px;color:@text-light;text-transform: none;font-weight: normal;font-style: normal;
+					&.expired {display: block;text-align: right;}
+				}
+			}
+
+		&.expired{ 
+			.panel-title {color:@text-light;}
+			.price {line-height: 12px;padding-top:15px;}
+		}
+		& .panel-collapse .panel-body {padding:10px}
+		&:last-child {border-bottom:0}
+		}
+	}
+}
+
+// Graphs
+.graphs { padding-left: 300px;
+	.btn-group{width: 600px;margin: 0 auto;display: block;overflow: hidden;
+		.btn {width: 33%}
+	}
+	strong{display: block;margin: 20px 0 0 100px;font-size: 16px;color:#363636;font-weight: normal}
+	.graph-holder {background: #ccc;height:200px;display: block;}
+	.graph-tooltip{width:140px;height:70px;display:block;border:1px solid #D6D6D6; .border-radius;background: #fff;color:@text-dark;padding:5px;font-size: 16px;
+		box-shadow:0 2px 2px rgba(0,0,0,0.1);
+		canvas {float: left}
+		span {float:right;}
+		strong,em {float:right;clear:right}
+		em {font-size: 12px;color:@text-light;}
+		strong {font-weight: bold;margin: 0;
+			em {font-size:10px;font-style: normal;font-weight: normal;float: none}
+		}
+
+		&:hover{text-decoration: none}
+
+	}
+}
+
+// Deal section
+.deals {width:672px;float: right;
+	& > header {font-size: 16px;line-height: 40px;margin-bottom: 15px;padding-left: 10px}
+	.sort {float: right;color:@text-light}
+	.btn-group{margin-left: 10px}
+	.btn-default{color:@text-light;border:1px solid @text-light;
+		.caret {border-top-color:@text-light}
+	}
+	.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {color:#666}
+}
+
+.deals-group {background: #fff;.border;.border-radius;
+	& > header{.border;border-width:0 0 1px;padding:11px 10px 7px;}
+	h3 {display: inline-block;margin: 0;
+		span {text-transform: none;color:@text-light;font-weight: normal;}
+	}
+	ul {list-style: none;padding-left:30px;margin:20px auto 0;width:642px}
+	.thumb { float:left;text-align: center;
+		span {font-size: 9px;display: block;color:@text-light;line-height: 13px}
+	}
+	.info{overflow: hidden;}
+}
+
+.deal-single {.border; .border-radius; position: relative;width:612px;margin-bottom: 20px;
+
+	.summary {height:65px;position: relative;z-index: 2;width:610px; display: block;padding: 4px;background-color: #fff;.border-radius;
+		.flight {width:177px;float:left;margin-right: 10px;
+			.thumb{margin:10px 8px 0 0;}
+			.info {width: 142px;
+				.alt {color:@text-light}
+			}
+		}
+		.hotel {width:150px;float:left;
+			.rating {display: block;}
+		}
+
+		.price-box {width:75px;height:30px;float:right;padding: 3px;line-height: 14px;font-size: 16px;margin-bottom: 5px;
+			.price {font-size: 16px;line-height: 14px}
+			em {font-size: 10px;line-height: 1}
+		}
+		.btn-show {float: right;}
+
+	}
+
+	.details{background: #fff;display: none;min-height: 65px;opacity:0;.border-radius;
+		.full {border-bottom: 1px solid #D6D6D6;
+			&.return{border-bottom: 0}
+		}
+		.hotel .thumb {width:80px}
+		.price-box {width:160px;position: absolute;right:-12px;top:-6px;.border-radius(4px 4px 0 4px);
+			&:after {content:'';width:0;height:0;border:5px solid #FFD487;border-bottom-color:transparent;border-right-color:transparent;display: block;position: absolute;right:0px;bottom:-11px;}
+			.btn {width: 100%;margin-top: 5px}
+		}
+		.hide-details {text-align: right;padding: 0 10px 5px 0}
+	}
+
+	.favourite {position: absolute; width:30px;height:30px; .border; overflow: hidden; .border-radius(4px 0 0 4px);top:15px;left:-30px; text-indent: -9999px;
+		background: url("../img/heart-sprite.png") no-repeat top center;
+		&:hover, &.active {background-position:center -30px;}
+	}
+}
+.lower {padding: 40px 0}
+
+//footer
+footer {background: #27B0B7; 
+	ul {text-align: center;list-style: none;padding: 0;margin:20px 0;}
+	li {display: inline-block;margin: 0 15px;}
+	a {font-weight: bold;color:#d6d6d6;padding: 5px 10px;
+		&:hover, &.active{color:#fff;text-decoration: none}
+	}
+}
+
+// Datepicker css tweaks
+.datepicker {font-size: 16px; padding: 10px;
+	.datepicker-switch, .dow, th.prev, th.next {text-transform: uppercase;color:@text-light}
+	.dow {font-size: 12px}
+	th,td {width:30px;padding:4px 5px;}
+}
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active:hover:hover,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled:hover:hover,
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled:hover.active,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active:hover.disabled,
+.datepicker table tr td.active.disabled.disabled,
+.datepicker table tr td.active.disabled:hover.disabled,
+.datepicker table tr td.active[disabled],
+.datepicker table tr td.active:hover[disabled],
+.datepicker table tr td.active.disabled[disabled],
+.datepicker table tr td.active.disabled:hover[disabled] {
+  background-color: #28A1A8 !important;
+  background-image:none;
+}

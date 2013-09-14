@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=1024">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/screen.css"> 
+
+        <!--[if lte IE 6]>
+            <link rel="stylesheet" type="text/css" href="css/bootstrap-ie6.min.css">
+            <link rel="stylesheet" type="text/css" href="css/ie-cs.css">
+        <![endif]-->
+
+        <!--[if IE]>
+            <link rel="stylesheet" href="css/ie.css">
+        <![endif]-->
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body class="home-page">
+        <div id="wrapper">
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+        <div id="body">
+        <header>
+            <div class="navbar navbar-inverse navbar-fixed-top" id="top-nav">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="index.html"><img src="img/logo.gif" alt="Foshan Food Market, your trusted online market"/></a>
+                        <!--
+                        <form class="navbar-form pull-left" id="search-form" action="auctions-search.html">
+                            <input type="text" class="span2"><button type="submit" class="btn">Search</button>
+                            <div class="popular">
+                                Top Searches:
+                                <ol>
+                                    <li><a href="#">Lobster</a></li>
+                                    <li><a href="#">Crab</a></li>
+                                    <li><a href="#">Rice</a></li>
+                                    <li><a href="#">Abalone</a></li>
+                                </ol>
+                            </div>
+                        </form>
+                    -->
+                        <ul class="nav pull-right" id="sub-nav">
+                            <li class="language english dropdown"><a href="#" lass="dropdown-toggle" data-toggle="dropdown">English<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="english"><a href="#">English</a></li>
+                                    <li class="chinese-simplified"><a href="#">简体中文</a></li>
+                                    <li class="chinese-traditional"><a href="#">繁體中文</a></li>
+                                </ul>
+                            </li>
+                            <li class="phone"><img src="img/ico-phone.gif"/>400-830-1230</li>
+                            <li><a href="#">How it works</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li class="dropdown login"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="member"><a href="login.html">Member</a></li>
+                                    <li class="supplier"><a href="#">Supplier</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar" id="main-nav">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <ul class="nav">
+                            <li class="active home"><a href="index.html">Home</a></li>
+                            <li class="auctions"><a href="auctions.html">Auctions</a></li>
+                            <li class="upcoming"><a href="upcoming.html">Upcoming</a></li>
+                            <li class="history"><a href="history.html">Price History</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <h1>Welcome to Foshan Food Market</h1>
+            <div class="row">
+
+                <div class="span11 main-col">
+                   
+
+                    <div id="myCarousel" class="carousel slide">
+                      <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                      </ol>
+                      <!-- Carousel items -->
+                      <div class="carousel-inner">
+                        <div class="active item">
+                            <div class="text">
+                                <span class="subhead">Fresh from the farm</span>
+                                <h2>Wholesale prices</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent turpis nisi, fringilla in vehicula eu, ultricies ac massa.</p>
+                            </div>
+                        </div>
+                        <div class="item"><h2>Headline</h2></div>
+                        <div class="item"></div>
+                      </div>
+                    </div>
+
+                    <div class="featured-section">
+                        <div class="filter">
+                            <span class="title">Featured:</span>
+                            <ul class="nav nav-pills">
+                                <li class="active"><a href="#">All</a></li>
+                                <li><a href="#">Seafood</a></li>
+                                <li><a href="#">Liquor</a></li>
+                                <li><a href="#">Grains</a></li>
+                                <li><a href="#">Poultry</a></li>
+                            </ul>
+                        </div>
+                        <ul class="featured-list">
+                            <li class="big-item">
+                                <a href="auctions.html?itemid=003">
+                                    <img src="img/salmon.jpg" alt="salmon"/>
+                                    <div class="title">
+                                        <h4>Norwegian Salmon</h4>
+                                        <span class="price">$45<sub>/kg</sub></span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="auctions.html?itemid=002">
+                                    <img src="img/lobster.jpg" alt="lobster"/>
+                                    <div class="title">
+                                        <h4>Boston Lobster</h4>
+                                        <span class="price">$45<sub>/kg</sub></span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="auctions.html?itemid=00003">
+                                    <img src="img/lobster.jpg" alt="lobster"/>
+                                    <div class="title">
+                                        <h4>Boston Lobster</h4>
+                                        <span class="price">$45<sub>/kg</sub></span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="auctions.html?itemid=00004">
+                                    <img src="img/lobster.jpg" alt="lobster"/>
+                                    <div class="title">
+                                        <h4>Boston Lobster</h4>
+                                        <span class="price">$45<sub>/kg</sub></span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="auctions.html?itemid=00005">
+                                    <img src="img/lobster.jpg" alt="lobster"/>
+                                    <div class="title">
+                                        <h4>Boston Homegrown Lobster</h4>
+                                        <span class="price">$45<sub>/kg</sub></span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="panel">
+                        <header>
+                            <h3>Graph</h3>
+                        </header>
+                        <img src="img/graph.gif"/>
+                    </div>
+                    
+                </div>
+
+                <div class="span4 offset1 side-col">
+                    <div class="panel">
+                        <header>
+                            <h3>Latest</h3>
+                            <a href="#">See all</a>
+                        </header>
+                        <ul>
+                            <li><a href="#"><span class="item">Australia Abalone</span><span class="time">2m</span><span class="price">12/kg</a></span></li>
+                            <li><a href="#"><span class="item">Sri Lankan Crab</span><span class="time">5m</span><span class="price">22/kg</a></span></li>
+                            <li><a href="#"><span class="item">Tiger Prawns</span><span class="time">30m</span><span class="price">33/kg</a></span></li>
+                            <li><a href="#"><span class="item">Clams</span><span class="time">1h</span><span class="price">44/kg</a></span></li>
+                            <li><a href="#"><span class="item">Mussels</span><span class="time">2h</span><span class="price">55/kg</a></span></li>
+                            <li><a href="#"><span class="item">Salmon Roe</span><span class="time">3h</span><span class="price">66/kg</a></span></li>
+                            <li><a href="#"><span class="item">Norwegian Salmon</span><span class="time">4h</span><span class="price">77/kg</a></span></li>
+                            <li><a href="#"><span class="item">Snow Crab</span><span class="time">16h</span><span class="price">88/kg</a></span></li>
+                            <li><a href="#"><span class="item">Alaskan Crab</span><span class="time">1d</span><span class="price">99/kg</a></span></li>
+                            <li><a href="#"><span class="item">Japanese Tuna</span><span class="time">2d</span><span class="price">102/kg</a></span></li>
+                        </ul>
+                    </div>
+
+                    <div class="panel">
+                        <header>
+                            <h3>Popular</h3>
+                            <a href="#">See all</a>
+                        </header>
+                        <ul>
+                            <li><a href="#"><span class="item">Australia Abalone</span><span class="time">2m</span><span class="price">12/kg</a></span></li>
+                            <li><a href="#"><span class="item">Sri Lankan Crab</span><span class="time">5m</span><span class="price">22/kg</a></span></li>
+                            <li><a href="#"><span class="item">Tiger Prawns</span><span class="time">30m</span><span class="price">33/kg</a></span></li>
+                            <li><a href="#"><span class="item">Clams</span><span class="time">1h</span><span class="price">44/kg</a></span></li>
+                            <li><a href="#"><span class="item">Mussels</span><span class="time">2h</span><span class="price">55/kg</a></span></li>
+                            <li><a href="#"><span class="item">Salmon Roe</span><span class="time">3h</span><span class="price">66/kg</a></span></li>
+                            <li><a href="#"><span class="item">Norwegian Salmon</span><span class="time">4h</span><span class="price">77/kg</a></span></li>
+                            <li><a href="#"><span class="item">Snow Crab</span><span class="time">16h</span><span class="price">88/kg</a></span></li>
+                            <li><a href="#"><span class="item">Alaskan Crab</span><span class="time">1d</span><span class="price">99/kg</a></span></li>
+                            <li><a href="#"><span class="item">Japanese Tuna</span><span class="time">2d</span><span class="price">102/kg</a></span></li>
+                        </ul>
+                        </ul>
+                    </div>
+                    <div class="panel">
+                        <header>
+                            <h3>News</h3>
+                            <a href="#">See all</a>
+                        </header>
+                        <ul>
+                            <li><a href="#"><span class="date">24 Apr</span><span class="title">Server Maintenance</span></a></li>
+                            <li><a href="#"><span class="date">24 Apr</span><span class="title">End Year Sale</span></a></li>
+                            <li><a href="#"><span class="date">24 Apr</span><span class="title">Food Market Introduces</span></a></li>
+                            <li><a href="#"><span class="date">24 Apr</span><span class="title">New Product Line</span></a></li>
+                            <li><a href="#"><span class="date">24 Apr</span><span class="title">Food Market Introduces new product line</span></a></li>
+                            <li><a href="#"><span class="date">24 Apr</span><span class="title">Food Market acquires grocery chain</span></a></li>
+                            <li><a href="#"><span class="date">24 Apr</span><span class="title">Food Market partners with farmers from 20...</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div> <!-- /container -->
+        </div>
+         <footer>
+            <div class="container">
+                <ul class="nav">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Membership Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li class="last"><a href="#">Contact Us</a></li>
+                </ul>
+                <p>Guangdong Foshan | ICP registration certificate number: GD ICP 11093226 No. -1 &copy; 2013 Copyright and All rights reserved</p>
+            </div>
+        </footer>
+
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <!--[if lte IE 6]>
+            <script src="js/bootstrap-ie.js"></script>
+        <![endif]-->
+        <!--[if lte IE 6]>
+            <script src="js/bootstrap-ie.js"></script>
+        <![endif]-->
+        <script src="js/vendor/jquery.tablesorter.min.js"></script>
+        <script src="js/vendor/bootstrap-datepicker.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
