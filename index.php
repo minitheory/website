@@ -67,7 +67,7 @@
   <div class="banner">
     <div class="row">
       <div class="seven columns">
-        <h1>We craft kickass interfaces.</h1>
+        <h1>We craft kickass experiences.</h1>
       </div>
       <div class="five columns">
         <p>We are a digital design studio that delivers quality user interaction and user interface design for the web, mobile devices and apps.</p>

@@ -5,7 +5,6 @@ $salt = '1737868536';
 $pass = '55767e1524709f946935e0256c40cb4c';
 // End copy and paste
 
-
 // Defaults
 $projectName = 'website'; // Your project name
 $email		 = 'zenan@minitheory.com'; // Email address you want pull notifcations to go to
